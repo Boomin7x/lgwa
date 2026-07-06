@@ -1,0 +1,356 @@
+{
+    "common": {
+        "siteName": "LionGate Sarl",
+        "tagline": "Big and Global, Go Digital",
+        "nav": {
+            "home": "Accueil",
+            "about": "À propos",
+            "it": "IT & Software Outsourcing",
+            "cosmetics": "Distribution Cosmétiques",
+            "references": "Références",
+            "careers": "Carrières",
+            "blog": "Blog",
+            "contact": "Contact",
+            "privacy": "Confidentialité",
+            "terms": "Conditions"
+        },
+        "footer": {
+            "tagline": "Big and Global, Go Digital",
+            "copyright": "LionGate Sarl. Tous droits réservés.",
+            "contactHeading": "Contact",
+            "legalHeading": "Légal"
+        },
+        "cookie": {
+            "message": "Nous utilisons des cookies pour améliorer votre expérience.",
+            "accept": "Accepter",
+            "decline": "Refuser"
+        },
+        "localeSwitcher": {
+            "label": "Langue",
+            "fr": "Français",
+            "en": "English"
+        }
+    },
+    "home": {
+        "meta": {
+            "title": "LionGate Sarl — IT & Distribution Cosmétiques au Cameroun",
+            "description": "LionGate Sarl, basée à Douala, Cameroun. Double expertise : IT & Software Outsourcing et Distribution de produits cosmétiques. Partenariat allemand."
+        },
+        "hero": {
+            "headline": "Votre partenaire technologique et commercial en Afrique centrale",
+            "subheadline": "IT & Software Outsourcing — Distribution Cosmétiques — Partenariat Allemand",
+            "ctaIt": "Découvrir l'IT",
+            "ctaCosmetics": "Nos cosmétiques"
+        },
+        "poles": {
+            "label": "Nos pôles d'expertise",
+            "itTitle": "IT & Software Outsourcing",
+            "itDescription": "DevOps, ERP Odoo, Intelligence Artificielle, développement full-stack (Symfony, Nuxt, FastAPI). Nous concevons et déployons des solutions logicielles sur mesure.",
+            "itCta": "En savoir plus",
+            "cosmeticsTitle": "Distribution Cosmétiques",
+            "cosmeticsDescription": "Distribution de produits cosmétiques premium en partenariat avec des fabricants allemands. Qualité européenne pour le marché africain.",
+            "cosmeticsCta": "Découvrir"
+        },
+        "stats": {
+            "label": "LionGate en chiffres",
+            "clients": "Clients actifs",
+            "projects": "Projets livrés",
+            "partners": "Partenaires",
+            "countries": "Pays"
+        },
+        "partners": {
+            "label": "Ils nous font confiance"
+        },
+        "references": {
+            "label": "Références",
+            "title": "Projets récents",
+            "cta": "Voir toutes les références"
+        },
+        "blog": {
+            "label": "Blog",
+            "title": "Actualités & Insights",
+            "cta": "Lire le blog"
+        },
+        "cta": {
+            "title": "Prêt à transformer votre entreprise ?",
+            "subtitle": "Discutons de votre projet. Nos équipes à Douala sont à votre écoute.",
+            "button": "Nous contacter"
+        }
+    },
+    "about": {
+        "meta": {
+            "title": "À propos — LionGate Sarl",
+            "description": "Découvrez l'histoire, la mission et les valeurs de LionGate Sarl, entreprise basée à Douala, Cameroun. Double pôle IT et Distribution Cosmétiques."
+        },
+        "intro": {
+            "label": "Notre histoire",
+            "headline": "L'excellence technologique au service de l'Afrique",
+            "content": "Fondée à Douala, LionGate Sarl s'est imposée comme un acteur de référence dans le paysage technologique camerounais. Notre double expertise — IT & Software Outsourcing d'une part, Distribution de produits cosmétiques d'autre part — reflète notre volonté de créer des ponts entre l'Afrique et l'Europe, notamment à travers notre partenariat allemand."
+        },
+        "values": {
+            "label": "Nos valeurs",
+            "headline": "Ce qui nous guide",
+            "items": [
+                {
+                    "title": "Excellence",
+                    "description": "Nous visons l'excellence dans chaque projet, chaque ligne de code, chaque relation client."
+                },
+                {
+                    "title": "Innovation",
+                    "description": "Nous adoptons les technologies les plus récentes pour offrir des solutions à la pointe."
+                },
+                {
+                    "title": "Partenariat",
+                    "description": "Nous croyons aux relations durables avec nos clients, nos partenaires allemands et nos équipes."
+                },
+                {
+                    "title": "Impact local",
+                    "description": "Nous contribuons au développement économique du Cameroun et de l'Afrique centrale."
+                }
+            ]
+        },
+        "team": {
+            "label": "Équipe dirigeante",
+            "headline": "Des experts passionnés"
+        },
+        "presence": {
+            "label": "Notre présence",
+            "headline": "Douala, au cœur de l'Afrique centrale",
+            "content": "Basés à Douala, la capitale économique du Cameroun, nous sommes au cœur du marché africain. Notre partenariat avec des entreprises allemandes nous permet d'apporter des solutions de classe mondiale à nos clients.",
+            "cta": "Nous contacter"
+        }
+    },
+    "it": {
+        "meta": {
+            "title": "IT & Software Outsourcing — LionGate Sarl",
+            "description": "Services IT et développement logiciel : DevOps, Odoo ERP, Intelligence Artificielle, développement full-stack. Méthodologie agile, GitHub Flow."
+        },
+        "hero": {
+            "label": "IT & Software Outsourcing",
+            "headline": "Des solutions logicielles qui transforment votre activité",
+            "subheadline": "DevOps — Odoo ERP — IA — Full-Stack"
+        },
+        "services": {
+            "label": "Nos services",
+            "headline": "Quatre piliers d'expertise",
+            "devops": {
+                "title": "DevOps",
+                "description": "Infrastructure as Code, CI/CD, conteneurisation, monitoring. Nous industrialisons vos déploiements pour plus de fiabilité et de vélocité."
+            },
+            "odoo": {
+                "title": "Odoo ERP",
+                "description": "Implémentation, personnalisation et développement de modules Odoo. De l'analyse des besoins à la mise en production."
+            },
+            "ai": {
+                "title": "IA & Produits",
+                "description": "Développement de solutions d'intelligence artificielle adaptées au contexte africain : modèles légers, interfaces multilingues."
+            },
+            "fullstack": {
+                "title": "Full-Stack",
+                "description": "Développement web sur mesure avec les technologies modernes : Symfony, Nuxt.js, FastAPI, React. Code propre, architecture robuste."
+            }
+        },
+        "methodology": {
+            "label": "Méthodologie",
+            "headline": "Agile, transparent, efficace",
+            "content": "Nous appliquons les méthodologies agiles et GitHub Flow pour garantir transparence, qualité et réactivité. Chaque projet bénéficie d'un suivi continu, de livraisons itératives et d'une communication fluide avec nos clients."
+        },
+        "cases": {
+            "label": "Études de cas",
+            "headline": "Ils nous ont fait confiance"
+        },
+        "cta": {
+            "title": "Un projet en tête ?",
+            "subtitle": "Discutons de vos besoins. Devis gratuit et sans engagement.",
+            "discuss": "Discuter d'un projet",
+            "quote": "Demander un devis"
+        }
+    },
+    "cosmetics": {
+        "meta": {
+            "title": "Distribution Cosmétiques — LionGate Sarl",
+            "description": "Distribution de produits cosmétiques premium en partenariat avec des fabricants allemands. Qualité européenne disponible au Cameroun et en Afrique centrale."
+        },
+        "hero": {
+            "label": "Distribution Cosmétiques",
+            "headline": "La qualité européenne à portée de main",
+            "subheadline": "Partenariat allemand — Distribution B2B — Produits premium"
+        },
+        "activity": {
+            "label": "Notre activité",
+            "headline": "Importation et distribution de cosmétiques premium",
+            "content": "Nous sélectionnons et distribuons des produits cosmétiques de qualité supérieure, fabriqués par nos partenaires allemands. Notre connaissance du marché africain nous permet d'offrir des produits adaptés aux besoins et aux préférences locales."
+        },
+        "categories": {
+            "label": "Catégories",
+            "headline": "Une gamme complète",
+            "items": [
+                "Soins visage",
+                "Soins corps",
+                "Soins capillaires",
+                "Parfumerie",
+                "Maquillage",
+                "Hygiène & Bien-être"
+            ]
+        },
+        "partnership": {
+            "label": "Partenariat",
+            "headline": "L'excellence allemande en Afrique",
+            "content": "Notre partenariat avec des fabricants allemands nous permet d'offrir des produits répondant aux normes de qualité les plus strictes. Nous assurons la chaîne d'importation complète, de la sélection des produits à leur mise sur le marché camerounais."
+        },
+        "cta": {
+            "title": "Intéressé par nos produits ?",
+            "subtitle": "Contactez notre équipe commerciale pour découvrir nos gammes et conditions de distribution.",
+            "button": "Contact commercial"
+        }
+    },
+    "references": {
+        "meta": {
+            "title": "Références — LionGate Sarl",
+            "description": "Découvrez nos projets et réalisations : e-commerce, ERP, DevOps, digitalisation. Études de cas au Cameroun, en Côte d'Ivoire et au Sénégal."
+        },
+        "hero": {
+            "label": "Références",
+            "headline": "Des projets qui parlent pour nous",
+            "subheadline": "Découvrez comment nous aidons nos clients à se transformer"
+        },
+        "filter": {
+            "all": "Tous les secteurs",
+            "label": "Filtrer par secteur"
+        },
+        "detail": {
+            "client": "Client",
+            "sector": "Secteur",
+            "location": "Pays",
+            "outcome": "Résultats"
+        }
+    },
+    "careers": {
+        "meta": {
+            "title": "Carrières — LionGate Sarl",
+            "description": "Rejoignez les équipes de LionGate Sarl à Douala. Postes en IT, développement logiciel, distribution cosmétiques. Candidature spontanée acceptée."
+        },
+        "intro": {
+            "label": "Carrières",
+            "headline": "Construisez l'avenir avec nous",
+            "content": "Rejoindre LionGate Sarl, c'est intégrer une entreprise dynamique, tournée vers l'innovation et ancrée dans les réalités africaines. Nous offrons un environnement de travail stimulant où chaque talent peut s'épanouir."
+        },
+        "culture": {
+            "label": "Culture",
+            "headline": "Notre environnement de travail",
+            "content": "Nous cultivons un esprit d'équipe fondé sur la confiance, l'autonomie et le partage des connaissances. Nos équipes bénéficient d'un cadre de travail moderne, d'outils performants et de formations continues."
+        },
+        "vacancies": {
+            "label": "Postes ouverts",
+            "headline": "Opportunités actuelles",
+            "type": "Type",
+            "department": "Département",
+            "location": "Lieu",
+            "requirements": "Prérequis",
+            "noVacancies": "Aucun poste ouvert pour le moment. N'hésitez pas à déposer une candidature spontanée."
+        },
+        "form": {
+            "label": "Candidature spontanée",
+            "headline": "Vous ne trouvez pas votre bonheur ?",
+            "subtitle": "Envoyez-nous votre candidature spontanée. Nous sommes toujours à la recherche de nouveaux talents.",
+            "name": "Nom complet",
+            "email": "Email",
+            "phone": "Téléphone",
+            "position": "Poste souhaité",
+            "message": "Message de motivation",
+            "submit": "Envoyer ma candidature",
+            "success": "Candidature envoyée avec succès !",
+            "error": "Une erreur est survenue. Veuillez réessayer."
+        }
+    },
+    "blog": {
+        "meta": {
+            "title": "Blog — LionGate Sarl",
+            "description": "Actualités, insights et articles tech de LionGate Sarl. Transformation digitale, ERP Odoo, DevOps, intelligence artificielle en Afrique."
+        },
+        "hero": {
+            "label": "Blog",
+            "headline": "Actualités & Insights",
+            "subheadline": "Tech, digital, business : les sujets qui font bouger l'Afrique"
+        },
+        "search": {
+            "placeholder": "Rechercher un article...",
+            "noResults": "Aucun article trouvé."
+        },
+        "readMore": "Lire l'article",
+        "backToBlog": "Retour au blog",
+        "publishedOn": "Publié le",
+        "readTime": "min de lecture",
+        "by": "Par",
+        "share": "Partager",
+        "related": "Articles similaires",
+        "newsletter": {
+            "title": "Restez informé",
+            "subtitle": "Recevez nos derniers articles directement dans votre boîte mail.",
+            "placeholder": "Votre email",
+            "button": "S'abonner",
+            "success": "Merci pour votre inscription !",
+            "error": "Une erreur est survenue."
+        }
+    },
+    "contact": {
+        "meta": {
+            "title": "Contact — LionGate Sarl",
+            "description": "Contactez LionGate Sarl à Douala, Cameroun. Formulaire de contact, adresse, téléphone. Demande de devis, projet IT, distribution cosmétique."
+        },
+        "hero": {
+            "label": "Contact",
+            "headline": "Parlons de votre projet",
+            "subheadline": "Une question ? Un devis ? Nous sommes à votre écoute."
+        },
+        "info": {
+            "label": "Nos coordonnées",
+            "address": "Adresse",
+            "phone": "Téléphone",
+            "email": "Email",
+            "socials": "Réseaux sociaux"
+        },
+        "form": {
+            "label": "Envoyez-nous un message",
+            "name": "Nom complet",
+            "email": "Email",
+            "phone": "Téléphone",
+            "subject": "Sujet",
+            "message": "Votre message",
+            "pole": "Pôle concerné",
+            "poleIt": "IT & Software Outsourcing",
+            "poleCosmetics": "Distribution Cosmétiques",
+            "submit": "Envoyer",
+            "success": "Message envoyé avec succès ! Nous vous répondons sous 48h.",
+            "error": "Une erreur est survenue. Veuillez réessayer."
+        }
+    },
+    "legal": {
+        "privacy": {
+            "meta": {
+                "title": "Politique de confidentialité — LionGate Sarl",
+                "description": "Politique de confidentialité de LionGate Sarl. Protection des données personnelles, cookies, droits RGPD."
+            },
+            "title": "Politique de confidentialité",
+            "content": "LionGate Sarl s'engage à protéger la confidentialité de vos données personnelles. Cette politique décrit comment nous collectons, utilisons et protégeons vos informations. Nous ne collectons que les données nécessaires au traitement de vos demandes et à l'amélioration de nos services. Conformément à la réglementation en vigueur, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour toute question, contactez-nous à contact@liongate-sarl.com."
+        },
+        "terms": {
+            "meta": {
+                "title": "Conditions d'utilisation — LionGate Sarl",
+                "description": "Conditions générales d'utilisation du site LionGate Sarl."
+            },
+            "title": "Conditions d'utilisation",
+            "content": "L'utilisation de ce site implique l'acceptation des présentes conditions générales. Le contenu de ce site (textes, images, logos) est la propriété de LionGate Sarl et ne peut être reproduit sans autorisation. LionGate Sarl s'efforce de maintenir les informations de ce site à jour mais ne peut garantir leur exactitude absolue. Les liens externes sont fournis à titre indicatif et n'engagent pas la responsabilité de LionGate Sarl."
+        }
+    },
+    "error": {
+        "title": "Une erreur est survenue",
+        "description": "Quelque chose s'est mal passé. Veuillez réessayer.",
+        "retry": "Réessayer"
+    },
+    "notFound": {
+        "title": "Page introuvable",
+        "description": "La page que vous cherchez n'existe pas ou a été déplacée.",
+        "cta": "Retour à l'accueil"
+    }
+}

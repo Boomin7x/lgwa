@@ -1,0 +1,135 @@
+import type { BlogPost } from "@/types/content"
+
+const mockPosts: BlogPost[] = [
+    {
+        slug: "paligo-digitalisation-commerce-afrique",
+        title: {
+            fr: "Comment PALIGO révolutionne le commerce B2B en Afrique centrale",
+            en: "How PALIGO Is Revolutionizing B2B Commerce in Central Africa",
+        },
+        excerpt: {
+            fr: "Découvrez comment la plateforme PALIGO, développée par LionGate Sarl, transforme les chaînes d'approvisionnement pour les entreprises africaines grâce à une solution e-commerce B2B/B2C intégrée.",
+            en: "Discover how the PALIGO platform, developed by LionGate Sarl, is transforming supply chains for African businesses through an integrated B2B/B2C e-commerce solution.",
+        },
+        body: {
+            fr: "<p>Dans un contexte où la digitalisation du commerce en Afrique centrale s'accélère, la plateforme PALIGO se positionne comme un acteur clé de cette transformation. Développée intégralement par les équipes de LionGate Sarl, cette solution répond aux besoins spécifiques des entreprises de la région.</p><p>La plateforme offre une gestion complète des stocks, des commandes et des livraisons, le tout accessible via une interface intuitive en français et en anglais.</p>",
+            en: "<p>As digital commerce accelerates in Central Africa, the PALIGO platform positions itself as a key player in this transformation. Developed entirely by LionGate Sarl's teams, this solution meets the specific needs of businesses in the region.</p><p>The platform offers complete management of inventory, orders, and deliveries, all accessible through an intuitive interface in French and English.</p>",
+        },
+        coverImage: "/blog/paligo-cover.jpg",
+        category: { fr: "Tech & Digital", en: "Tech & Digital" },
+        author: "Équipe LionGate",
+        publishedAt: "2026-06-15",
+        readTime: 5,
+        tags: [
+            { fr: "E-commerce", en: "E-commerce" },
+            { fr: "B2B", en: "B2B" },
+            { fr: "Transformation digitale", en: "Digital Transformation" },
+        ],
+    },
+    {
+        slug: "odoo-erp-avantages-pme-africaines",
+        title: {
+            fr: "Odoo ERP : 5 avantages clés pour les PME africaines",
+            en: "Odoo ERP: 5 Key Benefits for African SMEs",
+        },
+        excerpt: {
+            fr: "L'ERP open-source Odoo s'impose comme une solution de choix pour les PME africaines. Découvrez les cinq avantages majeurs qui en font un outil incontournable de la transformation digitale.",
+            en: "The open-source Odoo ERP is becoming a go-to solution for African SMEs. Discover the five major benefits that make it an essential digital transformation tool.",
+        },
+        body: {
+            fr: "<p>Les PME africaines font face à des défis uniques : ressources limitées, besoin d'agilité et accès restreint aux technologies de pointe. Odoo ERP apporte une réponse concrète à ces enjeux.</p><p>Modularité, coût maîtrisé, adaptabilité locale — Odoo coche toutes les cases pour les entreprises en croissance sur le continent.</p>",
+            en: "<p>African SMEs face unique challenges: limited resources, need for agility, and restricted access to cutting-edge technologies. Odoo ERP provides a concrete answer to these challenges.</p><p>Modularity, controlled costs, local adaptability — Odoo checks all the boxes for growing businesses on the continent.</p>",
+        },
+        coverImage: "/blog/odoo-cover.jpg",
+        category: { fr: "Tech & Digital", en: "Tech & Digital" },
+        author: "Jean M., Directeur Technique",
+        publishedAt: "2026-05-28",
+        readTime: 7,
+        tags: [
+            { fr: "Odoo", en: "Odoo" },
+            { fr: "ERP", en: "ERP" },
+            { fr: "PME", en: "SMEs" },
+        ],
+    },
+    {
+        slug: "devops-afrique-bonnes-pratiques",
+        title: {
+            fr: "DevOps en Afrique : bonnes pratiques et retours d'expérience",
+            en: "DevOps in Africa: Best Practices and Case Studies",
+        },
+        excerpt: {
+            fr: "Retour sur nos projets DevOps au Cameroun et en Côte d'Ivoire. Infrastructure as Code, CI/CD, monitoring — comment nous aidons nos clients à industrialiser leurs déploiements.",
+            en: "A look back at our DevOps projects in Cameroon and Ivory Coast. Infrastructure as Code, CI/CD, monitoring — how we help our clients industrialize their deployments.",
+        },
+        body: {
+            fr: "<p>Le DevOps n'est pas réservé aux grands groupes technologiques. En Afrique, de plus en plus d'entreprises adoptent ces pratiques pour accélérer leurs cycles de développement et améliorer la fiabilité de leurs services.</p><p>À travers nos missions au Cameroun et en Côte d'Ivoire, nous avons identifié les pratiques qui fonctionnent le mieux dans le contexte africain.</p>",
+            en: "<p>DevOps is not reserved for large tech groups. In Africa, more and more companies are adopting these practices to accelerate their development cycles and improve service reliability.</p><p>Through our missions in Cameroon and Ivory Coast, we have identified the practices that work best in the African context.</p>",
+        },
+        coverImage: "/blog/devops-cover.jpg",
+        category: { fr: "Tech & Digital", en: "Tech & Digital" },
+        author: "Équipe LionGate",
+        publishedAt: "2026-05-10",
+        readTime: 6,
+        tags: [
+            { fr: "DevOps", en: "DevOps" },
+            { fr: "CI/CD", en: "CI/CD" },
+        ],
+    },
+    {
+        slug: "liongate-partenariat-allemand-cosmetiques",
+        title: {
+            fr: "LionGate renforce son partenariat allemand dans la cosmétique",
+            en: "LionGate Strengthens Its German Partnership in Cosmetics",
+        },
+        excerpt: {
+            fr: "Notre pôle Distribution Cosmétiques franchit une nouvelle étape avec l'extension de notre partenariat allemand. De nouvelles gammes de produits arrivent au Cameroun.",
+            en: "Our Cosmetics Distribution division reaches a new milestone with the extension of our German partnership. New product lines are arriving in Cameroon.",
+        },
+        body: {
+            fr: "<p>Depuis sa création, le pôle Distribution Cosmétiques de LionGate Sarl s'appuie sur des partenariats solides avec des fabricants allemands reconnus pour leur qualité et leur innovation.</p><p>Cette nouvelle phase de notre collaboration permet d'élargir la gamme de produits disponibles au Cameroun et en Afrique centrale, avec des marques premium adaptées aux besoins du marché local.</p>",
+            en: "<p>Since its creation, LionGate Sarl's Cosmetics Distribution division has relied on strong partnerships with German manufacturers known for their quality and innovation.</p><p>This new phase of our collaboration expands the range of products available in Cameroon and Central Africa, with premium brands adapted to local market needs.</p>",
+        },
+        coverImage: "/blog/cosmetics-cover.jpg",
+        category: { fr: "Actualités LIONGATE", en: "LIONGATE News" },
+        author: "Équipe LionGate",
+        publishedAt: "2026-04-22",
+        readTime: 4,
+        tags: [
+            { fr: "Cosmétiques", en: "Cosmetics" },
+            { fr: "Partenariat", en: "Partnership" },
+            { fr: "Allemagne", en: "Germany" },
+        ],
+    },
+    {
+        slug: "ia-produits-afrique-opportunites",
+        title: {
+            fr: "IA et produits numériques : les opportunités pour l'Afrique",
+            en: "AI and Digital Products: Opportunities for Africa",
+        },
+        excerpt: {
+            fr: "L'intelligence artificielle n'est plus une technologie du futur. Analyse des opportunités concrètes pour les entreprises et institutions africaines.",
+            en: "Artificial intelligence is no longer a future technology. Analysis of concrete opportunities for African businesses and institutions.",
+        },
+        body: {
+            fr: "<p>L'IA transforme tous les secteurs, et l'Afrique ne fait pas exception. Des solutions de santé aux outils agricoles, en passant par la fintech, les applications concrètes se multiplient.</p><p>Chez LionGate, nous développons des produits IA adaptés aux réalités du marché africain : modèles légers, fonctionnement hors-ligne, interfaces multilingues.</p>",
+            en: "<p>AI is transforming all sectors, and Africa is no exception. From healthcare solutions to agricultural tools, to fintech, concrete applications are multiplying.</p><p>At LionGate, we develop AI products adapted to African market realities: lightweight models, offline functionality, multilingual interfaces.</p>",
+        },
+        coverImage: "/blog/ai-cover.jpg",
+        category: { fr: "Tech & Digital", en: "Tech & Digital" },
+        author: "Équipe LionGate",
+        publishedAt: "2026-04-05",
+        readTime: 8,
+        tags: [
+            { fr: "IA", en: "AI" },
+            { fr: "Innovation", en: "Innovation" },
+        ],
+    },
+]
+
+export function getPosts(): BlogPost[] {
+    return mockPosts
+}
+
+export function getPost(slug: string): BlogPost | undefined {
+    return mockPosts.find((post) => post.slug === slug)
+}
