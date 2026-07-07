@@ -1,32 +1,32 @@
 import { notFound } from "next/navigation"
-import { getLocale } from "next-intl/server"
+import { setRequestLocale } from "next-intl/server"
 import type { Metadata } from "next"
+import type { Locale } from "next-intl"
 import { PostBody } from "@/components/sections/blog/post-body"
 import { NewsletterBlock } from "@/components/sections/blog/newsletter-block"
 import { getPost, getPosts } from "@/lib/content/blog-mock"
 
 type Params = {
-    locale: string
+    locale: Locale
     slug: string
 }
 
 export async function generateStaticParams(): Promise<Params[]> {
     const posts = getPosts()
     return posts.flatMap((post) => [
-        { locale: "fr", slug: post.slug },
-        { locale: "en", slug: post.slug },
+        { locale: "fr" as const, slug: post.slug },
+        { locale: "en" as const, slug: post.slug },
     ])
 }
 
 export async function generateMetadata({
     params,
 }: {
-    params: Promise<Pick<Params, "slug">>
+    params: Promise<Params>
 }): Promise<Metadata> {
-    const { slug } = await params
+    const { locale, slug } = await params
     const post = getPost(slug)
     if (!post) return { title: "Not Found" }
-    const locale = (await getLocale()) as "fr" | "en"
     return {
         title: post.title[locale],
         description: post.excerpt[locale],
@@ -38,9 +38,9 @@ export default async function BlogPostPage({
 }: {
     params: Promise<Params>
 }) {
-    const { slug } = await params
+    const { locale, slug } = await params
+    setRequestLocale(locale)
     const post = getPost(slug)
-    const locale = (await getLocale()) as "fr" | "en"
 
     if (!post) {
         notFound()

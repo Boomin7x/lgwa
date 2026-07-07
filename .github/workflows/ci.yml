@@ -1,59 +1,85 @@
 name: CI
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
 
 jobs:
-  check:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
+    check:
+        runs-on: ubuntu-latest
+        timeout-minutes: 15
 
-    steps:
-      - uses: actions/checkout@v4
+        steps:
+            - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 10
+            - uses: pnpm/action-setup@v4
+              with:
+                  version: 10
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: pnpm
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+                  cache: pnpm
 
-      - run: pnpm install --frozen-lockfile
+            - run: pnpm install --frozen-lockfile
 
-      - run: pnpm typecheck
+            - run: pnpm typecheck
 
-      - run: pnpm lint
+            - run: pnpm lint
 
-      - run: pnpm vitest run
+            - run: pnpm vitest run
 
-      - run: pnpm build
+            - run: pnpm build
 
-  e2e:
-    needs: check
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
+    e2e:
+        needs: check
+        runs-on: ubuntu-latest
+        timeout-minutes: 15
 
-    steps:
-      - uses: actions/checkout@v4
+        steps:
+            - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 10
+            - uses: pnpm/action-setup@v4
+              with:
+                  version: 10
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: pnpm
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+                  cache: pnpm
 
-      - run: pnpm install --frozen-lockfile
+            - run: pnpm install --frozen-lockfile
 
-      - run: pnpm exec playwright install chromium --with-deps
+            - run: pnpm build
 
-      - run: pnpm test:e2e
-        env:
-          CI: true
+            - run: pnpm exec playwright install chromium --with-deps
+
+            - run: pnpm test:e2e
+              env:
+                  CI: true
+
+    lighthouse:
+        needs: check
+        runs-on: ubuntu-latest
+        timeout-minutes: 15
+        continue-on-error: true
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: pnpm/action-setup@v4
+              with:
+                  version: 10
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+                  cache: pnpm
+
+            - run: pnpm install --frozen-lockfile
+
+            - run: pnpm build
+
+            - run: pnpm dlx @lhci/cli autorun

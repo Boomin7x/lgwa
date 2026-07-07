@@ -2,7 +2,7 @@ import localFont from "next/font/local"
 
 export const displayFont = localFont({
     src: "./fonts/instrument-serif-regular.woff2",
-    variable: "--font-display",
+    variable: "--font-instrument-serif",
     display: "swap",
     preload: true,
 })
@@ -26,7 +26,7 @@ export const sansFont = localFont({
             weight: "700",
         },
     ],
-    variable: "--font-sans",
+    variable: "--font-inter",
     display: "swap",
     preload: true,
 })

@@ -46,3 +46,7 @@ next-env.d.ts
 AGENTS.md
 SKILL.md
 
+
+# playwright
+/test-results/
+/playwright-report/

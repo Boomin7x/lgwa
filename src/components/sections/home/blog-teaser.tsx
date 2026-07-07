@@ -8,7 +8,8 @@ import { getPosts } from "@/lib/content/blog-mock"
 
 export function HomeBlogTeaser() {
     const t = useTranslations("home.blog")
-    const locale = useLocale() as "fr" | "en"
+    const tBlog = useTranslations("blog")
+    const locale = useLocale()
     const posts = getPosts().slice(0, 3)
 
     return (
@@ -32,7 +33,7 @@ export function HomeBlogTeaser() {
                             </p>
                             <p className="text-small text-muted mt-3">
                                 {post.publishedAt} · {post.readTime}{" "}
-                                {t("blog:readTime")}
+                                {tBlog("readTime")}
                             </p>
                         </Link>
                     </Reveal>

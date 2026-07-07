@@ -17,6 +17,6 @@ export const mainNavLinks: NavLink[] = [
 ]
 
 export const legalNavLinks: NavLink[] = [
-    { label: "common.nav.privacy" as MessageKey, href: "/legal/privacy" },
-    { label: "common.nav.terms" as MessageKey, href: "/legal/terms" },
+    { label: "common.nav.privacy", href: "/legal/privacy" },
+    { label: "common.nav.terms", href: "/legal/terms" },
 ]

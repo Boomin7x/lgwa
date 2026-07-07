@@ -1,17 +1,27 @@
-import { getTranslations } from "next-intl/server"
+import { getTranslations, setRequestLocale } from "next-intl/server"
 import type { Metadata } from "next"
+import type { Locale } from "next-intl"
 import { Section } from "@/components/layout/section"
 import { Reveal } from "@/components/motion/reveal"
 
-export async function generateMetadata(): Promise<Metadata> {
-    const t = await getTranslations("legal.terms.meta")
+type PageProps = {
+    params: Promise<{ locale: Locale }>
+}
+
+export async function generateMetadata({
+    params,
+}: PageProps): Promise<Metadata> {
+    const { locale } = await params
+    const t = await getTranslations({ locale, namespace: "legal.terms.meta" })
     return {
         title: t("title"),
         description: t("description"),
     }
 }
 
-export default async function TermsPage() {
+export default async function TermsPage({ params }: PageProps) {
+    const { locale } = await params
+    setRequestLocale(locale)
     const t = await getTranslations("legal.terms")
 
     return (

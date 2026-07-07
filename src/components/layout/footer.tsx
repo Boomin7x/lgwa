@@ -14,7 +14,7 @@ export function Footer() {
                 <div className="grid gap-12 md:grid-cols-3">
                     <div>
                         <p className="font-display text-accent text-2xl">
-                            {t("footer.tagline")}
+                            {t("common.footer.tagline")}
                         </p>
                         <div className="mt-6 flex items-center gap-3">
                             <a
@@ -50,7 +50,7 @@ export function Footer() {
 
                     <div>
                         <h3 className="text-muted mb-4 text-sm font-medium tracking-[0.15em] uppercase">
-                            {t("footer.contactHeading")}
+                            {t("common.footer.contactHeading")}
                         </h3>
                         <div className="text-muted space-y-2 text-sm">
                             <p>{siteConfig.contact.address}</p>
@@ -66,20 +66,20 @@ export function Footer() {
                         </div>
                         <div className="mt-6">
                             <h3 className="text-muted mb-4 text-sm font-medium tracking-[0.15em] uppercase">
-                                {t("footer.legalHeading")}
+                                {t("common.footer.legalHeading")}
                             </h3>
                             <div className="space-y-2">
                                 <Link
                                     href="/legal/privacy"
                                     className="text-muted hover:text-accent block text-sm transition-colors"
                                 >
-                                    {t("nav.privacy")}
+                                    {t("common.nav.privacy")}
                                 </Link>
                                 <Link
                                     href="/legal/terms"
                                     className="text-muted hover:text-accent block text-sm transition-colors"
                                 >
-                                    {t("nav.terms")}
+                                    {t("common.nav.terms")}
                                 </Link>
                             </div>
                         </div>
@@ -88,7 +88,7 @@ export function Footer() {
 
                 <div className="border-border text-muted mt-16 border-t pt-8 text-center text-xs">
                     <p>
-                        &copy; {year} {t("footer.copyright")}
+                        &copy; {year} {t("common.footer.copyright")}
                     </p>
                 </div>
             </div>

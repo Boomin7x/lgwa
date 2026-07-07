@@ -18,8 +18,8 @@
     --color-surface-light: oklch(0.956 0.014 85);
     --color-surface-secondary: oklch(0.286 0.094 351);
 
-    --font-display: var(--font-display);
-    --font-sans: var(--font-sans);
+    --font-display: var(--font-instrument-serif);
+    --font-sans: var(--font-inter);
 
     --text-display: clamp(2.5rem, 5vw, 6rem);
     --text-display--line-height: 1.05;

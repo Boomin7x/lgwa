@@ -157,7 +157,8 @@
         },
         "cases": {
             "label": "Études de cas",
-            "headline": "Ils nous ont fait confiance"
+            "headline": "Ils nous ont fait confiance",
+            "viewAll": "Voir toutes nos références"
         },
         "cta": {
             "title": "Un projet en tête ?",

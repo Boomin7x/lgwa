@@ -32,9 +32,7 @@ export function ItCaseStudies() {
                 ))}
             </StaggerGroup>
             <div className="mt-8">
-                <LinkButton href="/references">
-                    {t("references:hero.headline")}
-                </LinkButton>
+                <LinkButton href="/references">{t("viewAll")}</LinkButton>
             </div>
         </Section>
     )

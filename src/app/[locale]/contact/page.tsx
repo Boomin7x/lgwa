@@ -1,19 +1,29 @@
-import { getTranslations } from "next-intl/server"
+import { getTranslations, setRequestLocale } from "next-intl/server"
 import type { Metadata } from "next"
+import type { Locale } from "next-intl"
 import { ContactInfo } from "@/components/sections/contact/info"
 import { ContactForm } from "@/components/sections/contact/form"
 import { Section } from "@/components/layout/section"
 import { SectionHeading } from "@/components/layout/section-heading"
 
-export async function generateMetadata(): Promise<Metadata> {
-    const t = await getTranslations("contact.meta")
+type PageProps = {
+    params: Promise<{ locale: Locale }>
+}
+
+export async function generateMetadata({
+    params,
+}: PageProps): Promise<Metadata> {
+    const { locale } = await params
+    const t = await getTranslations({ locale, namespace: "contact.meta" })
     return {
         title: t("title"),
         description: t("description"),
     }
 }
 
-export default async function ContactPage() {
+export default async function ContactPage({ params }: PageProps) {
+    const { locale } = await params
+    setRequestLocale(locale)
     const heroT = await getTranslations("contact.hero")
 
     return (

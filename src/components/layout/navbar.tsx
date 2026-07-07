@@ -18,7 +18,7 @@ export function Navbar() {
     return (
         <header className="border-border bg-background/95 fixed top-0 right-0 left-0 z-40 border-b backdrop-blur-sm">
             <nav
-                aria-label={t("siteName")}
+                aria-label={t("common.siteName")}
                 className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-8"
             >
                 <Link href="/" className="font-display text-accent text-xl">
