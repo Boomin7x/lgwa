@@ -5,7 +5,7 @@ import { mainNavLinks } from "@/config/nav"
 import { siteConfig } from "@/config/site"
 
 export function Footer() {
-    const t = useTranslations("common")
+    const t = useTranslations()
     const year = new Date().getFullYear()
 
     return (

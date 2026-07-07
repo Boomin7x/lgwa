@@ -51,7 +51,9 @@ export function Navbar() {
                     </div>
                     <div className="hidden md:block">
                         <Button size="sm" asChild>
-                            <Link href="/contact">{t("nav.contact")}</Link>
+                            <Link href="/contact">
+                                {t("common.nav.contact")}
+                            </Link>
                         </Button>
                     </div>
                     <div className="md:hidden">
