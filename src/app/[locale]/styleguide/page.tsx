@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -24,10 +25,58 @@ import { MicroLabel } from "@/components/layout/micro-label"
 import { SectionHeading } from "@/components/layout/section-heading"
 import { LinkButton } from "@/components/layout/link-button"
 import { Reveal } from "@/components/motion/reveal"
-import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerText } from "@/components/motion/stagger-text"
 import { StaggerGroup } from "@/components/motion/stagger-group"
+import { FadeIn } from "@/components/motion/fade-in"
+import { Parallax } from "@/components/motion/parallax"
 import { useToast } from "@/components/ui/sonner"
+
+const inkSwatches = [
+    { name: "Ink", className: "bg-ink border-border border" },
+    { name: "Ink raised", className: "bg-ink-raised" },
+    { name: "Gold", className: "bg-gold text-ink" },
+    { name: "Gold soft", className: "bg-gold-soft text-ink" },
+    { name: "Gold deep", className: "bg-gold-deep text-paper" },
+    { name: "Bordeaux", className: "bg-bordeaux text-paper" },
+    { name: "Paper", className: "bg-paper text-ink" },
+    { name: "Paper raised", className: "bg-paper-raised text-ink" },
+]
+
+const demoImage = "/images/photo-1494412574643-ff11b0a5c1c3.jpg"
+
+const listRows = [
+    { no: "01", title: "Editorial list row", detail: "Hairline dividers" },
+    { no: "02", title: "Condensed headings", detail: "Gold on hover only" },
+    { no: "03", title: "Sober rhythm", detail: "One accent per moment" },
+]
+
+const statBlocks = [
+    { value: "120+", label: "Delivered projects" },
+    { value: "15", label: "Active partners" },
+    { value: "6", label: "Countries served" },
+]
+
+function SurfaceDemo({ title }: { title: string }) {
+    return (
+        <div>
+            <MicroLabel className="mb-4">{title}</MicroLabel>
+            <p className="font-heading text-h3 text-foreground uppercase">
+                Heading on this surface
+            </p>
+            <p className="text-body text-body-text mt-2 max-w-md">
+                Body text keeps a verified AA pair against every band the site
+                uses.
+            </p>
+            <p className="text-small text-muted mt-1">
+                Muted text stays legible too.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+                <Button>Primary</Button>
+                <Button variant="secondary">Secondary</Button>
+            </div>
+        </div>
+    )
+}
 
 export default function StyleguidePage() {
     const { toast } = useToast()
@@ -35,76 +84,170 @@ export default function StyleguidePage() {
     const [accordionValue, setAccordionValue] = useState("")
 
     return (
-        <div className="space-y-48 py-20">
-            <Section>
+        <div className="pt-16">
+            <Section className="pb-0 md:pb-0">
+                <MicroLabel slashes={1} className="mb-8">
+                    Design system
+                </MicroLabel>
                 <StaggerText
                     as="h1"
-                    className="font-display text-display text-accent"
+                    className="font-display text-mega text-foreground uppercase"
                 >
                     Styleguide
                 </StaggerText>
             </Section>
 
             <Section>
-                <SectionHeading label="Palette" headline="Color Tokens" />
+                <SectionHeading headline="Color tokens" />
                 <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-                    <div className="border-border bg-background flex h-32 items-end rounded-sm border p-4">
-                        <span className="text-foreground text-xs">
-                            Background
-                        </span>
+                    {inkSwatches.map((swatch) => (
+                        <div
+                            key={swatch.name}
+                            className={`flex h-32 items-end p-4 ${swatch.className}`}
+                        >
+                            <span className="font-mono text-xs uppercase">
+                                {swatch.name}
+                            </span>
+                        </div>
+                    ))}
+                </div>
+            </Section>
+
+            <Section>
+                <SectionHeading headline="Type stack" />
+                <div className="space-y-10">
+                    <div>
+                        <p className="text-micro text-muted mb-2 font-mono uppercase">
+                            Anton, mega display
+                        </p>
+                        <p className="font-display text-hero text-foreground uppercase">
+                            Big and global
+                        </p>
                     </div>
-                    <div className="bg-foreground flex h-32 items-end rounded-sm p-4">
-                        <span className="text-background text-xs">
-                            Foreground
-                        </span>
+                    <div>
+                        <p className="text-micro text-muted mb-2 font-mono uppercase">
+                            Bebas Neue, headings
+                        </p>
+                        <p className="font-heading text-display text-foreground uppercase">
+                            Section heading scale
+                        </p>
+                        <p className="font-heading text-h2 text-foreground mt-3 uppercase">
+                            Card and block headings
+                        </p>
                     </div>
-                    <div className="bg-accent flex h-32 items-end rounded-sm p-4">
-                        <span className="text-background text-xs">Accent</span>
+                    <div>
+                        <p className="text-micro text-muted mb-2 font-mono uppercase">
+                            IBM Plex Sans, body
+                        </p>
+                        <p className="text-body text-body-text max-w-2xl">
+                            Body copy stays mixed-case and quiet next to the
+                            condensed uppercase display faces, holding a
+                            comfortable measure for long-form reading.
+                        </p>
                     </div>
-                    <div className="bg-secondary flex h-32 items-end rounded-sm p-4">
-                        <span className="text-foreground text-xs">
-                            Secondary
-                        </span>
+                    <div>
+                        <p className="text-micro text-muted mb-2 font-mono uppercase">
+                            IBM Plex Mono, labels
+                        </p>
+                        <MicroLabel slashes={3}>Slash section label</MicroLabel>
+                    </div>
+                </div>
+            </Section>
+
+            <Section variant="light">
+                <SurfaceDemo title="Light surface" />
+            </Section>
+
+            <Section variant="bordeaux">
+                <SurfaceDemo title="Bordeaux surface" />
+            </Section>
+
+            <Section>
+                <SectionHeading headline="Imagery treatment" />
+                <div className="grid gap-10 md:grid-cols-2">
+                    <div>
+                        <Parallax strength={24} className="aspect-16/10">
+                            <Image
+                                src={demoImage}
+                                alt="Container terminal photographed with the warm site-wide grade"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                className="img-warm scale-110 object-cover"
+                            />
+                        </Parallax>
+                        <p className="text-micro text-muted mt-4 font-mono uppercase">
+                            Warm grade + scroll parallax
+                        </p>
+                    </div>
+                    <div className="group">
+                        <div className="relative aspect-16/10 overflow-hidden">
+                            <Image
+                                src={demoImage}
+                                alt="Container terminal demonstrating the hover zoom treatment"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                className="img-warm ease-editorial object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                            />
+                        </div>
+                        <p className="text-micro text-muted mt-4 font-mono uppercase">
+                            Hover zoom, editorial easing
+                        </p>
                     </div>
                 </div>
             </Section>
 
             <Section>
-                <SectionHeading label="Typography" headline="Type Scale" />
-                <div className="space-y-8">
-                    <p className="font-display text-display text-foreground">
-                        Display — Instrument Serif
-                    </p>
-                    <h1 className="text-h1 text-foreground">Heading 1</h1>
-                    <h2 className="text-h2 text-foreground">Heading 2</h2>
-                    <h3 className="text-h3 text-foreground">Heading 3</h3>
-                    <h4 className="text-h4 text-foreground">Heading 4</h4>
-                    <p className="text-body text-muted">
-                        Body text — Inter. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua.
-                    </p>
-                    <p className="text-small text-muted">Small text</p>
-                    <p className="text-micro text-muted tracking-[0.15em] uppercase">
-                        Micro label
-                    </p>
+                <SectionHeading headline="Editorial patterns" />
+                <div className="border-border divide-border divide-y border-t">
+                    {listRows.map((row) => (
+                        <div
+                            key={row.no}
+                            className="group grid gap-2 py-8 md:grid-cols-[auto_1fr_auto] md:items-baseline md:gap-10"
+                        >
+                            <span
+                                aria-hidden
+                                className="font-heading text-h3 text-accent"
+                            >
+                                {row.no}
+                            </span>
+                            <h3 className="font-heading text-h3 text-foreground group-hover:text-accent uppercase transition-colors duration-300">
+                                {row.title}
+                            </h3>
+                            <p className="text-small text-muted">
+                                {row.detail}
+                            </p>
+                        </div>
+                    ))}
                 </div>
+                <dl className="border-border mt-24 grid grid-cols-1 gap-x-8 gap-y-14 border-t pt-14 sm:grid-cols-3">
+                    {statBlocks.map((stat) => (
+                        <div key={stat.label} className="flex flex-col">
+                            <dt className="text-micro text-muted order-2 mt-3 font-mono uppercase">
+                                {stat.label}
+                            </dt>
+                            <dd className="font-heading text-display text-foreground order-1">
+                                {stat.value}
+                            </dd>
+                        </div>
+                    ))}
+                </dl>
             </Section>
 
             <Section>
-                <SectionHeading label="Components" headline="Buttons" />
-                <div className="flex flex-wrap gap-4">
+                <SectionHeading headline="Buttons and links" />
+                <div className="flex flex-wrap items-center gap-4">
                     <Button>Primary</Button>
                     <Button variant="secondary">Secondary</Button>
                     <Button variant="ghost">Ghost</Button>
                     <Button size="sm">Small</Button>
                     <Button size="lg">Large</Button>
+                    <LinkButton href="/styleguide">Arrow link</LinkButton>
                 </div>
             </Section>
 
             <Section>
-                <SectionHeading label="Components" headline="Form Elements" />
-                <div className="grid max-w-lg gap-6">
+                <SectionHeading headline="Form elements" />
+                <div className="bg-surface-raised grid max-w-lg gap-6 p-7 sm:p-10">
                     <div className="space-y-2">
                         <Label htmlFor="sg-input">Label</Label>
                         <Input id="sg-input" placeholder="Placeholder text" />
@@ -128,22 +271,26 @@ export default function StyleguidePage() {
             </Section>
 
             <Section>
-                <SectionHeading label="Components" headline="Accordion" />
-                <div className="max-w-lg">
+                <SectionHeading headline="Accordion" />
+                <div className="border-border max-w-lg border-t">
                     <Accordion
                         type="single"
                         value={accordionValue}
                         onValueChange={setAccordionValue}
                     >
                         <AccordionItem value="item-1">
-                            <AccordionTrigger>Section One</AccordionTrigger>
+                            <AccordionTrigger className="font-heading text-h4 uppercase">
+                                Section one
+                            </AccordionTrigger>
                             <AccordionContent>
                                 Content for section one. This demonstrates the
                                 accordion component with motion animation.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2">
-                            <AccordionTrigger>Section Two</AccordionTrigger>
+                            <AccordionTrigger className="font-heading text-h4 uppercase">
+                                Section two
+                            </AccordionTrigger>
                             <AccordionContent>
                                 Content for section two with different text.
                             </AccordionContent>
@@ -153,100 +300,62 @@ export default function StyleguidePage() {
             </Section>
 
             <Section>
-                <SectionHeading label="Components" headline="Dialog" />
-                <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-                    <DialogTrigger>
-                        <Button>Open Dialog</Button>
-                    </DialogTrigger>
-                    <DialogContent>
-                        <DialogHeader>
-                            <DialogTitle>Dialog Title</DialogTitle>
-                        </DialogHeader>
-                        <p className="text-muted mt-3 text-sm">
-                            This is a dialog content area. Press Escape or click
-                            outside to close.
-                        </p>
-                    </DialogContent>
-                </Dialog>
-            </Section>
-
-            <Section>
-                <SectionHeading label="Components" headline="Toast" />
+                <SectionHeading headline="Dialog and toast" />
                 <div className="flex flex-wrap gap-4">
+                    <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+                        <DialogTrigger>
+                            <Button>Open dialog</Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                            <DialogHeader>
+                                <DialogTitle>Dialog title</DialogTitle>
+                            </DialogHeader>
+                            <p className="text-muted mt-3 text-sm">
+                                This is a dialog content area. Press Escape or
+                                click outside to close.
+                            </p>
+                        </DialogContent>
+                    </Dialog>
                     <Button
                         variant="secondary"
-                        onClick={() => toast("Info notification", "info")}
-                    >
-                        Info Toast
-                    </Button>
-                    <Button
                         onClick={() => toast("Success notification", "success")}
                     >
-                        Success Toast
+                        Success toast
                     </Button>
                     <Button
                         variant="secondary"
                         onClick={() => toast("Error notification", "error")}
                     >
-                        Error Toast
+                        Error toast
                     </Button>
                 </div>
             </Section>
 
             <Section>
-                <SectionHeading label="Components" headline="Link Button" />
-                <LinkButton href="/">Read More Link</LinkButton>
-            </Section>
-
-            <Section>
-                <SectionHeading label="Components" headline="Micro Label" />
-                <MicroLabel>Section Label</MicroLabel>
-            </Section>
-
-            <Section variant="bordeaux">
-                <SectionHeading label="Section" headline="Bordeaux Variant" />
-                <p className="text-muted">
-                    This section uses the bordeaux secondary variant background.
-                </p>
-            </Section>
-
-            <Section variant="light">
-                <SectionHeading
-                    label="Section"
-                    headline="Light Variant"
-                    className="text-background"
-                />
-                <p className="text-background">
-                    This section uses the light surface variant.
-                </p>
-            </Section>
-
-            <Section>
-                <SectionHeading label="Motion" headline="Reveal Animation" />
-                <div className="space-y-24">
-                    <Reveal>
-                        <div className="border-border text-muted rounded-sm border p-12 text-center">
-                            This element fades and slides up on scroll
-                        </div>
-                    </Reveal>
-                    <StaggerGroup staggerDelay={0.15}>
-                        <FadeIn>
-                            <div className="border-border text-accent rounded-sm border p-8 text-center">
-                                Item 1
+                <SectionHeading headline="Motion" />
+                <StaggerGroup className="grid gap-6 md:grid-cols-3">
+                    {["Reveal", "Stagger", "Editorial ease"].map((label) => (
+                        <FadeIn key={label}>
+                            <div className="bg-surface-raised p-8">
+                                <p className="text-micro text-accent font-mono uppercase">
+                                    {label}
+                                </p>
+                                <p className="text-small text-muted mt-3">
+                                    Every entrance uses cubic-bezier(0.16, 1,
+                                    0.3, 1) and collapses to static under
+                                    reduced motion.
+                                </p>
                             </div>
                         </FadeIn>
-                        <FadeIn>
-                            <div className="border-border text-accent rounded-sm border p-8 text-center">
-                                Item 2
-                            </div>
-                        </FadeIn>
-                        <FadeIn>
-                            <div className="border-border text-accent rounded-sm border p-8 text-center">
-                                Item 3
-                            </div>
-                        </FadeIn>
-                    </StaggerGroup>
-                </div>
+                    ))}
+                </StaggerGroup>
+                <Reveal className="mt-10">
+                    <p className="text-small text-muted max-w-xl">
+                        Scroll-linked motion is reserved for hero imagery
+                        (parallax), the hero exit (scrubbed fade), and the blog
+                        reading progress bar.
+                    </p>
+                </Reveal>
             </Section>
         </div>
     )

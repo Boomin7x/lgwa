@@ -2,18 +2,19 @@ import { getTranslations, setRequestLocale } from "next-intl/server"
 import type { Metadata } from "next"
 import type { Locale } from "next-intl"
 import { BlogIndexHero } from "@/components/sections/blog/index-hero"
-import { PostCard } from "@/components/sections/blog/post-card"
+import { PostList } from "@/components/sections/blog/post-list"
 import { NewsletterBlock } from "@/components/sections/blog/newsletter-block"
 import { Section } from "@/components/layout/section"
 import { getPosts } from "@/lib/content/blog-mock"
 
 type PageProps = {
     params: Promise<{ locale: Locale }>
+    searchParams: Promise<{ category?: string }>
 }
 
 export async function generateMetadata({
     params,
-}: PageProps): Promise<Metadata> {
+}: Pick<PageProps, "params">): Promise<Metadata> {
     const { locale } = await params
     const t = await getTranslations({ locale, namespace: "blog.meta" })
     return {
@@ -22,20 +23,30 @@ export async function generateMetadata({
     }
 }
 
-export default async function BlogPage({ params }: PageProps) {
+function parseCategory(value?: string): "tech" | "news" | "all" {
+    return value === "tech" || value === "news" ? value : "all"
+}
+
+export default async function BlogPage({ params, searchParams }: PageProps) {
     const { locale } = await params
     setRequestLocale(locale)
+    const { category } = await searchParams
+    const activeCategory = parseCategory(category)
     const posts = getPosts()
+    const filteredPosts =
+        activeCategory === "all"
+            ? posts
+            : posts.filter((post) => post.categorySlug === activeCategory)
 
     return (
         <>
             <BlogIndexHero />
-            <Section>
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {posts.map((post) => (
-                        <PostCard key={post.slug} post={post} locale={locale} />
-                    ))}
-                </div>
+            <Section className="pt-16 md:pt-20">
+                <PostList
+                    posts={filteredPosts}
+                    locale={locale}
+                    activeCategory={activeCategory}
+                />
             </Section>
             <NewsletterBlock />
         </>

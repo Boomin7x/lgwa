@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { useTranslations } from "next-intl"
 import { AnimatePresence, motion } from "motion/react"
+import { Link } from "@/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import { useReducedMotion } from "@/components/motion/use-reduced-motion"
 
@@ -64,12 +65,20 @@ export function CookieBanner() {
                     initial={prefersReduced ? false : { y: "100%" }}
                     animate={{ y: 0 }}
                     exit={{ y: "100%" }}
-                    transition={{ duration: 0.4, ease: [0, 0, 0.2, 1] }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                     role="alertdialog"
                     aria-label={t("message")}
                 >
                     <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-4">
-                        <p className="text-muted text-sm">{t("message")}</p>
+                        <p className="text-muted text-sm">
+                            {t("message")}{" "}
+                            <Link
+                                href="/legal/privacy"
+                                className="text-foreground hover:text-accent underline underline-offset-4 transition-colors"
+                            >
+                                {t("policyLink")}
+                            </Link>
+                        </p>
                         <div className="flex gap-3">
                             <Button
                                 variant="secondary"

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { useTranslations, useLocale } from "next-intl"
 import { Section } from "@/components/layout/section"
 import { SectionHeading } from "@/components/layout/section-heading"
@@ -12,26 +13,39 @@ export function ItCaseStudies() {
     const refs = getReferences().slice(0, 3)
 
     return (
-        <Section>
-            <SectionHeading label={t("label")} headline={t("headline")} />
-            <StaggerGroup className="grid gap-6 md:grid-cols-3">
+        <Section className="pt-0 md:pt-0">
+            <SectionHeading
+                label={t("label")}
+                slashes={2}
+                headline={t("headline")}
+            />
+            <StaggerGroup className="grid gap-10 md:grid-cols-3">
                 {refs.map((ref) => (
                     <FadeIn key={ref.id}>
-                        <div className="border-border rounded-sm border p-6">
-                            <p className="text-foreground font-medium">
-                                {ref.client}
-                            </p>
-                            <p className="text-small text-muted mt-1">
+                        <article className="flex h-full flex-col">
+                            <div className="relative aspect-16/10 overflow-hidden">
+                                <Image
+                                    src={ref.image}
+                                    alt={ref.imageAlt[locale]}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                    className="img-warm object-cover"
+                                />
+                            </div>
+                            <p className="text-micro text-accent mt-6 font-mono uppercase">
                                 {ref.sector[locale]}
                             </p>
+                            <h3 className="font-heading text-h3 text-foreground mt-2 uppercase">
+                                {ref.client}
+                            </h3>
                             <p className="text-small text-muted mt-3 line-clamp-3">
-                                {ref.description[locale]}
+                                {ref.outcome[locale]}
                             </p>
-                        </div>
+                        </article>
                     </FadeIn>
                 ))}
             </StaggerGroup>
-            <div className="mt-8">
+            <div className="mt-12">
                 <LinkButton href="/references">{t("viewAll")}</LinkButton>
             </div>
         </Section>

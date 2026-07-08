@@ -19,14 +19,14 @@ function LinkButton({
         <Link
             href={href}
             className={cn(
-                "group inline-flex items-center gap-2 text-sm font-medium transition-all duration-300",
-                variant === "primary" && "text-accent hover:text-accent-soft",
+                "group ease-editorial inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase transition-all duration-300",
+                variant === "primary" && "text-accent hover:text-foreground",
                 variant === "ghost" && "text-muted hover:text-foreground",
                 className
             )}
         >
             {children}
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight className="ease-editorial h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
     )
 }

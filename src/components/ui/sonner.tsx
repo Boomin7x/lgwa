@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react"
 import { X } from "lucide-react"
+import { useTranslations } from "next-intl"
 import {
     createContext,
     useContext,
@@ -39,6 +40,7 @@ type ToasterProps = {
 function Toaster({ children }: ToasterProps) {
     const [toasts, setToasts] = useState<Toast[]>([])
     const prefersReduced = useReducedMotion()
+    const tCommon = useTranslations("common")
 
     const addToast = useCallback(
         (message: string, type: ToastType = "info") => {
@@ -58,17 +60,19 @@ function Toaster({ children }: ToasterProps) {
     return (
         <ToastContext.Provider value={{ toast: addToast }}>
             {children}
-            <div className="fixed right-6 bottom-6 z-[100] flex flex-col gap-2">
+            <div className="fixed right-6 bottom-6 z-100 flex flex-col gap-2">
                 <AnimatePresence>
                     {toasts.map((t) => (
                         <motion.div
                             key={t.id}
+                            role="status"
+                            aria-live="polite"
                             className={cn(
                                 "flex min-w-72 items-center gap-3 rounded-sm border px-4 py-3 shadow-lg",
                                 t.type === "success" &&
                                     "border-accent bg-background text-foreground",
                                 t.type === "error" &&
-                                    "bg-background border-red-500 text-red-300",
+                                    "bg-background border-danger text-danger",
                                 t.type === "info" &&
                                     "border-border bg-background text-foreground"
                             )}
@@ -84,6 +88,7 @@ function Toaster({ children }: ToasterProps) {
                             <span className="flex-1 text-sm">{t.message}</span>
                             <button
                                 type="button"
+                                aria-label={tCommon("close")}
                                 onClick={() => removeToast(t.id)}
                                 className="shrink-0 text-current opacity-60 transition-opacity hover:opacity-100"
                             >

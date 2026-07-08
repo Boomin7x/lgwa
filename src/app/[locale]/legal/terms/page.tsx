@@ -25,12 +25,12 @@ export default async function TermsPage({ params }: PageProps) {
     const t = await getTranslations("legal.terms")
 
     return (
-        <Section className="pt-32">
+        <Section className="pt-36 md:pt-44">
             <Reveal>
-                <h1 className="font-display text-h1 text-foreground">
+                <h1 className="font-heading text-h1 text-foreground uppercase">
                     {t("title")}
                 </h1>
-                <div className="text-body text-muted mt-8 max-w-2xl leading-relaxed whitespace-pre-line">
+                <div className="text-body text-body-text mt-8 max-w-2xl leading-relaxed whitespace-pre-line">
                     {t("content")}
                 </div>
             </Reveal>

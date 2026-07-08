@@ -12,16 +12,16 @@ export function AboutValues() {
     }>
 
     return (
-        <Section>
-            <SectionHeading label={t("label")} headline={t("headline")} />
-            <StaggerGroup className="grid gap-6 md:grid-cols-2">
+        <Section variant="light">
+            <SectionHeading headline={t("headline")} />
+            <StaggerGroup className="grid gap-x-16 gap-y-12 md:grid-cols-2">
                 {items.map((item) => (
                     <FadeIn key={item.title}>
-                        <div className="border-border rounded-sm border p-8">
-                            <h3 className="font-display text-h4 text-accent">
+                        <div className="border-accent border-l-2 pl-8">
+                            <h3 className="font-heading text-h3 text-foreground uppercase">
                                 {item.title}
                             </h3>
-                            <p className="text-muted mt-3">
+                            <p className="text-body text-muted mt-4 max-w-md text-pretty">
                                 {item.description}
                             </p>
                         </div>

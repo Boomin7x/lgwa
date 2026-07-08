@@ -18,14 +18,17 @@ export function CareersVacancies() {
 
     return (
         <Section>
-            <SectionHeading label={t("label")} headline={t("headline")} />
+            <SectionHeading headline={t("headline")} />
             {vacancies.length === 0 ? (
                 <p className="text-muted">{t("noVacancies")}</p>
             ) : (
-                <Accordion type="single" className="max-w-2xl">
+                <Accordion
+                    type="single"
+                    className="border-border max-w-3xl border-t"
+                >
                     {vacancies.map((v) => (
                         <AccordionItem key={v.id} value={v.id}>
-                            <AccordionTrigger>
+                            <AccordionTrigger className="font-heading text-h4 uppercase">
                                 {v.title[locale]}
                             </AccordionTrigger>
                             <AccordionContent>

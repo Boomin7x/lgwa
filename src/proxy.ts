@@ -6,5 +6,5 @@ const intlMiddleware = createMiddleware(routing)
 export default intlMiddleware
 
 export const config = {
-    matcher: ["/((?!_next|api|favicon.ico).*)"],
+    matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
 }

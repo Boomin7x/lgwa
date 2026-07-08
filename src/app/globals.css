@@ -1,55 +1,86 @@
 @import "tailwindcss";
 
 @theme {
-    --color-background: oklch(0.145 0 0);
+    --color-ink: oklch(0.16 0.005 85);
+    --color-ink-raised: oklch(0.215 0.008 85);
+    --color-paper: oklch(0.956 0.014 85);
+    --color-paper-raised: oklch(0.915 0.016 85);
+    --color-bordeaux: oklch(0.286 0.094 351);
+    --color-bordeaux-raised: oklch(0.33 0.09 351);
+    --color-gold: oklch(0.731 0.115 85);
+    --color-gold-soft: oklch(0.864 0.091 92);
+    --color-gold-deep: oklch(0.5 0.105 85);
+
+    --color-text-on-dark: oklch(0.85 0.016 85);
+    --color-text-on-dark-muted: oklch(0.74 0.02 85);
+    --color-text-on-light: oklch(0.34 0.012 85);
+    --color-text-on-light-muted: oklch(0.5 0.02 85);
+    --color-text-on-bordeaux: oklch(0.9 0.02 350);
+    --color-text-on-bordeaux-muted: oklch(0.86 0.03 350);
+    --color-border-on-dark: oklch(0.3 0.012 85);
+    --color-border-on-light: oklch(0.82 0.016 85);
+    --color-border-on-bordeaux: oklch(0.42 0.07 351);
+
+    --color-background: oklch(0.16 0.005 85);
+    --color-surface-raised: oklch(0.215 0.008 85);
     --color-foreground: oklch(0.956 0.014 85);
+    --color-body-text: oklch(0.85 0.016 85);
+    --color-muted: oklch(0.74 0.02 85);
+    --color-border: oklch(0.3 0.012 85);
     --color-accent: oklch(0.731 0.115 85);
     --color-accent-soft: oklch(0.864 0.091 92);
-    --color-accent-gradient: linear-gradient(
-        135deg,
-        oklch(0.731 0.115 85),
-        oklch(0.864 0.091 92)
-    );
     --color-secondary: oklch(0.286 0.094 351);
-    --color-muted: oklch(0.35 0.01 85);
-    --color-border: oklch(0.25 0.01 85);
+    --color-danger: oklch(0.72 0.17 25);
 
-    --color-surface-dark: oklch(0.145 0 0);
-    --color-surface-light: oklch(0.956 0.014 85);
-    --color-surface-secondary: oklch(0.286 0.094 351);
+    --font-display: var(--font-anton);
+    --font-heading: var(--font-bebas-neue);
+    --font-sans: var(--font-ibm-plex-sans);
+    --font-mono: var(--font-ibm-plex-mono);
 
-    --font-display: var(--font-instrument-serif);
-    --font-sans: var(--font-inter);
-
-    --text-display: clamp(2.5rem, 5vw, 6rem);
-    --text-display--line-height: 1.05;
-    --text-display--letter-spacing: -0.02em;
-    --text-h1: clamp(2rem, 4vw, 4rem);
-    --text-h1--line-height: 1.1;
-    --text-h2: clamp(1.5rem, 2.5vw, 2.5rem);
-    --text-h2--line-height: 1.2;
-    --text-h3: clamp(1.25rem, 2vw, 1.75rem);
-    --text-h3--line-height: 1.25;
-    --text-h4: clamp(1.125rem, 1.5vw, 1.375rem);
-    --text-h4--line-height: 1.35;
+    --text-mega: clamp(4rem, 13vw, 13rem);
+    --text-mega--line-height: 0.92;
+    --text-mega--letter-spacing: 0.01em;
+    --text-hero: clamp(2.75rem, 5.5vw, 5.5rem);
+    --text-hero--line-height: 1;
+    --text-hero--letter-spacing: 0.01em;
+    --text-display: clamp(2.5rem, 5vw, 5rem);
+    --text-display--line-height: 0.95;
+    --text-display--letter-spacing: 0.01em;
+    --text-wordmark: clamp(4.5rem, 17.5vw, 16rem);
+    --text-wordmark--line-height: 0.9;
+    --text-wordmark--letter-spacing: 0.02em;
+    --text-h1: clamp(2.5rem, 4.5vw, 4.5rem);
+    --text-h1--line-height: 0.98;
+    --text-h1--letter-spacing: 0.01em;
+    --text-h2: clamp(1.875rem, 3vw, 3rem);
+    --text-h2--line-height: 1;
+    --text-h2--letter-spacing: 0.01em;
+    --text-h3: clamp(1.5rem, 2.2vw, 2.125rem);
+    --text-h3--line-height: 1.05;
+    --text-h3--letter-spacing: 0.015em;
+    --text-h4: clamp(1.25rem, 1.6vw, 1.5rem);
+    --text-h4--line-height: 1.1;
+    --text-h4--letter-spacing: 0.02em;
     --text-body: 1rem;
-    --text-body--line-height: 1.6;
+    --text-body--line-height: 1.65;
     --text-small: 0.875rem;
-    --text-small--line-height: 1.5;
+    --text-small--line-height: 1.55;
     --text-micro: 0.75rem;
     --text-micro--line-height: 1.4;
-    --text-micro--letter-spacing: 0.15em;
+    --text-micro--letter-spacing: 0.14em;
 
     --spacing-section-mobile: 5rem;
     --spacing-section-desktop: 10rem;
     --spacing-container-padding: 2rem;
 
-    --radius-sm: 0.1875rem;
-    --radius-md: 0.375rem;
-    --radius-lg: 0.5rem;
+    --radius-sm: 0;
+    --radius-md: 0;
+    --radius-lg: 0;
 
-    --animate-fade-in: fade-in 0.5s ease-out;
-    --animate-slide-up: slide-up 0.5s ease-out;
+    --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+
+    --animate-fade-in: fade-in 0.5s var(--ease-editorial);
+    --animate-slide-up: slide-up 0.5s var(--ease-editorial);
 
     @keyframes fade-in {
         from {
@@ -72,11 +103,48 @@
     }
 }
 
+@utility surface-dark {
+    background-color: var(--color-ink);
+}
+
+@utility surface-light {
+    background-color: var(--color-paper);
+    --color-background: var(--color-paper);
+    --color-surface-raised: var(--color-paper-raised);
+    --color-foreground: var(--color-ink);
+    --color-body-text: var(--color-text-on-light);
+    --color-muted: var(--color-text-on-light-muted);
+    --color-border: var(--color-border-on-light);
+    --color-accent: var(--color-gold-deep);
+    --color-accent-soft: var(--color-gold-deep);
+}
+
+@utility surface-bordeaux {
+    background-color: var(--color-bordeaux);
+    --color-background: var(--color-bordeaux);
+    --color-surface-raised: var(--color-bordeaux-raised);
+    --color-foreground: var(--color-paper);
+    --color-body-text: var(--color-text-on-bordeaux);
+    --color-muted: var(--color-text-on-bordeaux-muted);
+    --color-border: var(--color-border-on-bordeaux);
+    --color-accent: var(--color-gold);
+    --color-accent-soft: var(--color-gold-soft);
+}
+
+@utility img-warm {
+    filter: saturate(0.82) contrast(1.06) sepia(0.14);
+}
+
 @layer base {
     body {
-        background-color: var(--color-background);
-        color: var(--color-foreground);
+        background-color: var(--color-ink);
+        color: var(--color-text-on-dark);
         font-family: var(--font-sans);
+    }
+
+    ::selection {
+        background-color: var(--color-gold);
+        color: var(--color-ink);
     }
 
     @media (prefers-reduced-motion: reduce) {

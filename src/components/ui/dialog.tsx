@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react"
 import { X } from "lucide-react"
+import { useTranslations } from "next-intl"
 import {
     createContext,
     useContext,
@@ -79,6 +80,7 @@ type DialogContentProps = {
 function DialogContent({ children, className }: DialogContentProps) {
     const ctx = useContext(DialogContext)
     const prefersReduced = useReducedMotion()
+    const t = useTranslations("common")
     if (!ctx) throw new Error("DialogContent must be inside Dialog")
 
     return (
@@ -107,6 +109,7 @@ function DialogContent({ children, className }: DialogContentProps) {
                     >
                         <button
                             type="button"
+                            aria-label={t("close")}
                             onClick={() => ctx.onOpenChange(false)}
                             className="text-muted hover:text-foreground focus-visible:ring-accent absolute top-4 right-4 transition-colors focus-visible:ring-2 focus-visible:outline-none"
                         >
@@ -136,7 +139,12 @@ type DialogTitleProps = {
 
 function DialogTitle({ children, className }: DialogTitleProps) {
     return (
-        <h2 className={cn("font-display text-foreground text-2xl", className)}>
+        <h2
+            className={cn(
+                "font-heading text-foreground text-3xl uppercase",
+                className
+            )}
+        >
             {children}
         </h2>
     )

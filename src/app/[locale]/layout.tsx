@@ -7,7 +7,8 @@ import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { CookieBanner } from "@/components/layout/cookie-banner"
 import { Toaster } from "@/components/ui/sonner"
-import { displayFont, sansFont } from "../fonts"
+import { displayFont, headingFont, monoFont, sansFont } from "../fonts"
+import "@/lib/env"
 import "../globals.css"
 
 export const metadata: Metadata = {
@@ -37,13 +38,13 @@ export default async function RootLayout({
     return (
         <html
             lang={locale}
-            className={`${displayFont.variable} ${sansFont.variable} h-full antialiased`}
+            className={`${displayFont.variable} ${headingFont.variable} ${sansFont.variable} ${monoFont.variable} h-full antialiased`}
         >
-            <body className="bg-background text-foreground flex min-h-full flex-col">
+            <body className="bg-background text-body-text flex min-h-full flex-col">
                 <NextIntlClientProvider>
                     <Toaster>
                         <Navbar />
-                        <main className="flex-1 pt-16">{children}</main>
+                        <main className="flex-1">{children}</main>
                         <Footer />
                         <CookieBanner />
                     </Toaster>

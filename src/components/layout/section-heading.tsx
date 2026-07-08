@@ -8,6 +8,8 @@ type SectionHeadingProps = {
     lede?: string
     className?: string
     children?: ReactNode
+    slashes?: number
+    as?: "h1" | "h2"
 }
 
 function SectionHeading({
@@ -16,15 +18,23 @@ function SectionHeading({
     lede,
     className,
     children,
+    slashes,
+    as: HeadingTag = "h2",
 }: SectionHeadingProps) {
     return (
         <div className={cn("mb-16 md:mb-24", className)}>
-            {label && <MicroLabel className="mb-4">{label}</MicroLabel>}
-            <h2 className="font-display text-display text-foreground">
+            {label && (
+                <MicroLabel slashes={slashes} className="mb-6">
+                    {label}
+                </MicroLabel>
+            )}
+            <HeadingTag className="font-heading text-display text-foreground max-w-4xl uppercase">
                 {headline}
-            </h2>
+            </HeadingTag>
             {lede && (
-                <p className="text-body text-muted mt-6 max-w-2xl">{lede}</p>
+                <p className="text-body text-muted mt-6 max-w-2xl text-pretty">
+                    {lede}
+                </p>
             )}
             {children}
         </div>

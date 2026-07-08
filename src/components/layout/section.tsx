@@ -9,9 +9,9 @@ type SectionProps = {
 }
 
 const variantStyles: Record<NonNullable<SectionProps["variant"]>, string> = {
-    dark: "bg-background",
-    light: "bg-foreground text-background",
-    bordeaux: "bg-secondary",
+    dark: "surface-dark",
+    light: "surface-light",
+    bordeaux: "surface-bordeaux",
 }
 
 function Section({ children, className, variant = "dark", id }: SectionProps) {
@@ -19,7 +19,7 @@ function Section({ children, className, variant = "dark", id }: SectionProps) {
         <section
             id={id}
             className={cn(
-                "px-8 py-20 md:py-40",
+                "px-5 py-24 sm:px-8 md:py-40",
                 variantStyles[variant],
                 className
             )}

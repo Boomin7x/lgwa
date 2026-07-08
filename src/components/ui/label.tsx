@@ -10,7 +10,7 @@ function Label({ className, htmlFor, ...props }: LabelProps) {
         <label
             htmlFor={htmlFor}
             className={cn(
-                "text-foreground text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-50",
+                "text-micro text-foreground font-mono leading-none uppercase peer-disabled:cursor-not-allowed peer-disabled:opacity-50",
                 className
             )}
             {...props}

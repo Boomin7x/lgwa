@@ -9,15 +9,21 @@ export function CosmeticsCategories() {
     const items = t.raw("items") as string[]
 
     return (
-        <Section>
-            <SectionHeading label={t("label")} headline={t("headline")} />
-            <StaggerGroup className="grid gap-4 md:grid-cols-3">
+        <Section variant="light" className="pt-0 md:pt-0">
+            <SectionHeading headline={t("headline")} />
+            <StaggerGroup className="border-border grid border-t md:grid-cols-2 md:gap-x-16">
                 {items.map((item) => (
                     <FadeIn key={item}>
-                        <div className="border-border rounded-sm border p-6 text-center">
-                            <p className="text-foreground font-medium">
+                        <div className="group border-border flex items-baseline justify-between gap-6 border-b py-7">
+                            <p className="font-heading text-h3 text-foreground group-hover:text-accent uppercase transition-colors duration-300">
                                 {item}
                             </p>
+                            <span
+                                aria-hidden
+                                className="text-accent font-mono text-xs opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                            >
+                                {"//"}
+                            </span>
                         </div>
                     </FadeIn>
                 ))}

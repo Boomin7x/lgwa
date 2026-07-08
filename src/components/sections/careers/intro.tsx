@@ -7,10 +7,12 @@ export function CareersIntro() {
     const t = useTranslations("careers.intro")
 
     return (
-        <Section className="flex min-h-[60vh] items-center pt-32">
+        <Section className="pt-36 pb-0 md:pt-44 md:pb-0">
             <Reveal>
                 <SectionHeading
+                    as="h1"
                     label={t("label")}
+                    slashes={1}
                     headline={t("headline")}
                     lede={t("content")}
                 />

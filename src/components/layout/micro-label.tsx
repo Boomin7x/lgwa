@@ -4,16 +4,22 @@ import { cn } from "@/lib/utils"
 type MicroLabelProps = {
     children: ReactNode
     className?: string
+    slashes?: number
 }
 
-function MicroLabel({ children, className }: MicroLabelProps) {
+function MicroLabel({ children, className, slashes = 2 }: MicroLabelProps) {
     return (
-        <div className={cn("flex items-center gap-3", className)}>
-            <span className="bg-accent block h-2 w-2" />
-            <span className="text-micro text-accent tracking-[0.15em] uppercase">
-                {children}
+        <p
+            className={cn(
+                "text-micro text-accent font-mono uppercase",
+                className
+            )}
+        >
+            <span aria-hidden className="text-accent/70 mr-2">
+                {"/".repeat(slashes)}
             </span>
-        </div>
+            {children}
+        </p>
     )
 }
 

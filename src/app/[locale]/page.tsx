@@ -30,9 +30,9 @@ export default async function HomePage({ params }: PageProps) {
     return (
         <>
             <HomeHero />
+            <HomePartners />
             <HomePoles />
             <HomeStats />
-            <HomePartners />
             <HomeReferencesTeaser />
             <HomeBlogTeaser />
             <HomeCta />

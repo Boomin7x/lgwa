@@ -9,7 +9,9 @@ export interface BlogPost {
     excerpt: LocalizedField
     body: LocalizedField
     coverImage: string
+    coverImageAlt: LocalizedField
     category: LocalizedField
+    categorySlug: "tech" | "news"
     author: string
     publishedAt: string
     readTime: number
@@ -22,6 +24,8 @@ export interface ProjectReference {
     sector: LocalizedField
     description: LocalizedField
     outcome: LocalizedField
+    image: string
+    imageAlt: LocalizedField
     logo: string
     tags: string[]
     location: string

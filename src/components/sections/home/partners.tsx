@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl"
 import { Section } from "@/components/layout/section"
-import { MicroLabel } from "@/components/layout/micro-label"
 import { Reveal } from "@/components/motion/reveal"
 
 const partners = [
@@ -15,20 +14,22 @@ export function HomePartners() {
     const t = useTranslations("home.partners")
 
     return (
-        <Section>
-            <MicroLabel className="mb-12 justify-center">
-                {t("label")}
-            </MicroLabel>
+        <Section className="py-14 md:py-16">
             <Reveal>
-                <div className="flex flex-wrap items-center justify-center gap-8 opacity-50 md:gap-16">
-                    {partners.map((name) => (
-                        <span
-                            key={name}
-                            className="text-muted text-sm font-medium tracking-[0.15em] uppercase"
-                        >
-                            {name}
-                        </span>
-                    ))}
+                <div className="border-border border-y py-10">
+                    <p className="text-micro text-muted mb-8 text-center font-mono uppercase">
+                        {t("label")}
+                    </p>
+                    <ul className="flex flex-wrap items-baseline justify-center gap-x-14 gap-y-5">
+                        {partners.map((name) => (
+                            <li
+                                key={name}
+                                className="font-heading text-h3 text-foreground/55 hover:text-foreground uppercase transition-colors duration-300"
+                            >
+                                {name}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </Reveal>
         </Section>

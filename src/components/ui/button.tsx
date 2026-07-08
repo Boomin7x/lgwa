@@ -4,19 +4,19 @@ import type { ButtonHTMLAttributes } from "react"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-    "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-sm text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+    "ease-editorial inline-flex items-center justify-center gap-2 whitespace-nowrap font-mono font-medium tracking-widest uppercase transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:-translate-y-px active:translate-y-0 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
     {
         variants: {
             variant: {
-                primary: "bg-accent text-background hover:bg-accent-soft",
+                primary: "bg-accent text-background hover:bg-foreground",
                 secondary:
-                    "border border-foreground text-foreground hover:bg-foreground hover:text-background",
-                ghost: "text-foreground hover:bg-muted",
+                    "border border-foreground/50 text-foreground hover:border-foreground hover:bg-foreground hover:text-background",
+                ghost: "text-foreground hover:bg-foreground/10",
             },
             size: {
-                sm: "h-9 px-4",
-                md: "h-11 px-6",
-                lg: "h-12 px-8 text-base",
+                sm: "h-9 px-4 text-[11px]",
+                md: "h-11 px-6 text-xs",
+                lg: "h-13 px-8 text-[13px]",
             },
         },
         defaultVariants: {

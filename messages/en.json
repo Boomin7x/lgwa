@@ -12,35 +12,47 @@
             "blog": "Blog",
             "contact": "Contact",
             "privacy": "Privacy",
-            "terms": "Terms"
+            "terms": "Terms",
+            "menu": "Menu",
+            "itShort": "IT & Software",
+            "cosmeticsShort": "Cosmetics"
         },
         "footer": {
             "tagline": "Big and Global, Go Digital",
             "copyright": "LionGate Sarl. All rights reserved.",
             "contactHeading": "Contact",
-            "legalHeading": "Legal"
+            "legalHeading": "Legal",
+            "navHeading": "Navigation"
         },
         "cookie": {
             "message": "We use cookies to enhance your experience.",
             "accept": "Accept",
-            "decline": "Decline"
+            "decline": "Decline",
+            "policyLink": "Privacy policy"
         },
         "localeSwitcher": {
             "label": "Language",
             "fr": "Français",
             "en": "English"
-        }
+        },
+        "form": {
+            "required": "This field is required",
+            "invalidEmail": "Invalid email address",
+            "messageTooShort": "Your message is too short (minimum 10 characters)"
+        },
+        "close": "Close"
     },
     "home": {
         "meta": {
-            "title": "LionGate Sarl — IT & Cosmetics Distribution in Cameroon",
+            "title": "LionGate Sarl | IT & Cosmetics Distribution in Cameroon",
             "description": "LionGate Sarl, based in Douala, Cameroon. Dual expertise: IT & Software Outsourcing and Cosmetics Product Distribution. German partnership."
         },
         "hero": {
             "headline": "Your technology and business partner in Central Africa",
-            "subheadline": "IT & Software Outsourcing — Cosmetics Distribution — German Partnership",
+            "subheadline": "IT & Software Outsourcing and premium cosmetics distribution, from Douala, backed by a German partnership.",
             "ctaIt": "Discover IT",
-            "ctaCosmetics": "Our Cosmetics"
+            "ctaCosmetics": "Our Cosmetics",
+            "imageAlt": "Container terminal at the port of Douala at dusk"
         },
         "poles": {
             "label": "Our Areas of Expertise",
@@ -49,7 +61,9 @@
             "itCta": "Learn More",
             "cosmeticsTitle": "Cosmetics Distribution",
             "cosmeticsDescription": "Distribution of premium cosmetic products in partnership with German manufacturers. European quality for the African market.",
-            "cosmeticsCta": "Discover"
+            "cosmeticsCta": "Discover",
+            "itImageAlt": "Software engineers collaborating around a laptop",
+            "cosmeticsImageAlt": "Premium skincare bottles arranged in warm natural light"
         },
         "stats": {
             "label": "LionGate in Numbers",
@@ -79,13 +93,14 @@
     },
     "about": {
         "meta": {
-            "title": "About — LionGate Sarl",
+            "title": "About | LionGate Sarl",
             "description": "Discover the history, mission, and values of LionGate Sarl, based in Douala, Cameroon. Dual IT and Cosmetics Distribution expertise."
         },
         "intro": {
             "label": "Our Story",
             "headline": "Technological excellence serving Africa",
-            "content": "Founded in Douala, LionGate Sarl has established itself as a key player in Cameroon's technology landscape. Our dual expertise — IT & Software Outsourcing on one hand, Cosmetics Distribution on the other — reflects our commitment to building bridges between Africa and Europe, particularly through our German partnership."
+            "content": "Founded in Douala, LionGate Sarl has established itself as a key player in Cameroon's technology landscape. Our dual expertise, IT & Software Outsourcing on one hand and Cosmetics Distribution on the other, reflects our commitment to building bridges between Africa and Europe, particularly through our German partnership.",
+            "imageAlt": "City skyline at dusk seen from above"
         },
         "values": {
             "label": "Our Values",
@@ -111,43 +126,76 @@
         },
         "team": {
             "label": "Leadership Team",
-            "headline": "Passionate Experts"
+            "headline": "Passionate Experts",
+            "members": [
+                {
+                    "role": "Chief Technology Officer",
+                    "area": "IT & Software",
+                    "imageAlt": "Portrait of the Chief Technology Officer"
+                },
+                {
+                    "role": "Sales Director",
+                    "area": "Distribution",
+                    "imageAlt": "Portrait of the Sales Director"
+                },
+                {
+                    "role": "Administrative Director",
+                    "area": "Operations",
+                    "imageAlt": "Portrait of the Administrative Director"
+                }
+            ]
         },
         "presence": {
             "label": "Our Presence",
             "headline": "Douala, at the Heart of Central Africa",
             "content": "Based in Douala, the economic capital of Cameroon, we are at the center of the African market. Our partnership with German companies allows us to bring world-class solutions to our clients.",
-            "cta": "Contact Us"
+            "cta": "Contact Us",
+            "facts": [
+                {
+                    "title": "Douala, Cameroon",
+                    "description": "Headquarters and engineering teams in the heart of the economic capital."
+                },
+                {
+                    "title": "Germany",
+                    "description": "Industrial and technology partners, including the PALIGO B2B/B2C platform."
+                }
+            ],
+            "imageAlt": "Container ship docked at a port terminal"
         }
     },
     "it": {
         "meta": {
-            "title": "IT & Software Outsourcing — LionGate Sarl",
+            "title": "IT & Software Outsourcing | LionGate Sarl",
             "description": "IT services and software development: DevOps, Odoo ERP, Artificial Intelligence, full-stack development. Agile methodology, GitHub Flow."
         },
         "hero": {
             "label": "IT & Software Outsourcing",
             "headline": "Software solutions that transform your business",
-            "subheadline": "DevOps — Odoo ERP — AI — Full-Stack"
+            "subheadline": "DevOps, Odoo ERP, artificial intelligence and full-stack development for demanding teams.",
+            "imageAlt": "Lines of code on a developer's screen"
         },
         "services": {
             "label": "Our Services",
             "headline": "Four Pillars of Expertise",
             "devops": {
                 "title": "DevOps",
-                "description": "Infrastructure as Code, CI/CD, containerization, monitoring. We industrialize your deployments for greater reliability and velocity."
+                "description": "Infrastructure as Code, CI/CD, containerization, monitoring. We industrialize your deployments for greater reliability and velocity.",
+                "imageAlt": "Rows of servers in a data center"
             },
             "odoo": {
                 "title": "Odoo ERP",
-                "description": "Implementation, customization, and development of Odoo modules. From requirements analysis to production deployment."
+                "description": "Implementation, customization, and development of Odoo modules. From requirements analysis to production deployment.",
+                "imageAlt": "Business analytics dashboard on a laptop screen"
             },
             "ai": {
                 "title": "AI & Products",
-                "description": "Development of AI solutions adapted to the African context: lightweight models, multilingual interfaces."
+                "description": "Development of AI solutions adapted to the African context: lightweight models, multilingual interfaces.",
+                "imageAlt": "Engineer reviewing a machine learning model on screen"
             },
             "fullstack": {
                 "title": "Full-Stack",
-                "description": "Custom web development with modern technologies: Symfony, Nuxt.js, FastAPI, React. Clean code, robust architecture."
+                "description": "Custom web development with modern technologies: Symfony, Nuxt.js, FastAPI, React. Clean code, robust architecture.",
+                "imageAlt": "Developer workspace with a code editor open"
             }
         },
         "methodology": {
@@ -169,18 +217,20 @@
     },
     "cosmetics": {
         "meta": {
-            "title": "Cosmetics Distribution — LionGate Sarl",
+            "title": "Cosmetics Distribution | LionGate Sarl",
             "description": "Distribution of premium cosmetic products in partnership with German manufacturers. European quality available in Cameroon and Central Africa."
         },
         "hero": {
             "label": "Cosmetics Distribution",
             "headline": "European quality within reach",
-            "subheadline": "German Partnership — B2B Distribution — Premium Products"
+            "subheadline": "German partnership, B2B distribution and premium products for the Central African market.",
+            "imageAlt": "Collection of premium cosmetic products"
         },
         "activity": {
             "label": "Our Activity",
             "headline": "Import and distribution of premium cosmetics",
-            "content": "We select and distribute high-quality cosmetic products manufactured by our German partners. Our knowledge of the African market allows us to offer products tailored to local needs and preferences."
+            "content": "We select and distribute high-quality cosmetic products manufactured by our German partners. Our knowledge of the African market allows us to offer products tailored to local needs and preferences.",
+            "imageAlt": "Warehouse shelves stocked with packaged goods"
         },
         "categories": {
             "label": "Categories",
@@ -207,7 +257,7 @@
     },
     "references": {
         "meta": {
-            "title": "References — LionGate Sarl",
+            "title": "References | LionGate Sarl",
             "description": "Discover our projects and achievements: e-commerce, ERP, DevOps, digitalization. Case studies in Cameroon, Ivory Coast, and Senegal."
         },
         "hero": {
@@ -224,11 +274,21 @@
             "sector": "Sector",
             "location": "Country",
             "outcome": "Results"
-        }
+        },
+        "sectors": {
+            "e-commerce": "E-commerce",
+            "logistics": "Logistics",
+            "finance": "Finance",
+            "healthcare": "Healthcare",
+            "devops": "DevOps",
+            "digitalization": "Digitalization",
+            "education": "Education"
+        },
+        "empty": "No references in this sector yet."
     },
     "careers": {
         "meta": {
-            "title": "Careers — LionGate Sarl",
+            "title": "Careers | LionGate Sarl",
             "description": "Join the LionGate Sarl team in Douala. Positions in IT, software development, cosmetics distribution. Spontaneous applications accepted."
         },
         "intro": {
@@ -239,7 +299,8 @@
         "culture": {
             "label": "Culture",
             "headline": "Our Work Environment",
-            "content": "We foster a team spirit based on trust, autonomy, and knowledge sharing. Our teams benefit from a modern work environment, powerful tools, and continuous training."
+            "content": "We foster a team spirit based on trust, autonomy, and knowledge sharing. Our teams benefit from a modern work environment, powerful tools, and continuous training.",
+            "imageAlt": "Team members working together in a modern office"
         },
         "vacancies": {
             "label": "Open Positions",
@@ -261,12 +322,13 @@
             "message": "Cover Letter",
             "submit": "Submit Application",
             "success": "Application sent successfully!",
-            "error": "An error occurred. Please try again."
+            "error": "An error occurred. Please try again.",
+            "cvNote": "CV / Portfolio link (optional)"
         }
     },
     "blog": {
         "meta": {
-            "title": "Blog — LionGate Sarl",
+            "title": "Blog | LionGate Sarl",
             "description": "News, insights, and tech articles from LionGate Sarl. Digital transformation, Odoo ERP, DevOps, artificial intelligence in Africa."
         },
         "hero": {
@@ -292,11 +354,16 @@
             "button": "Subscribe",
             "success": "Thank you for subscribing!",
             "error": "An error occurred."
+        },
+        "filter": {
+            "all": "All articles",
+            "tech": "Tech & Digital",
+            "news": "LIONGATE News"
         }
     },
     "contact": {
         "meta": {
-            "title": "Contact — LionGate Sarl",
+            "title": "Contact | LionGate Sarl",
             "description": "Contact LionGate Sarl in Douala, Cameroon. Contact form, address, phone. Request a quote, IT project, cosmetics distribution."
         },
         "hero": {
@@ -323,13 +390,19 @@
             "poleCosmetics": "Cosmetics Distribution",
             "submit": "Send",
             "success": "Message sent successfully! We'll get back to you within 48 hours.",
-            "error": "An error occurred. Please try again."
+            "error": "An error occurred. Please try again.",
+            "intentQuote": "Quote request"
+        },
+        "map": {
+            "title": "Our location in Douala",
+            "consentNote": "The interactive map loads from OpenStreetMap after you consent to cookies.",
+            "open": "Open in OpenStreetMap"
         }
     },
     "legal": {
         "privacy": {
             "meta": {
-                "title": "Privacy Policy — LionGate Sarl",
+                "title": "Privacy Policy | LionGate Sarl",
                 "description": "Privacy policy of LionGate Sarl. Personal data protection, cookies, GDPR rights."
             },
             "title": "Privacy Policy",
@@ -337,7 +410,7 @@
         },
         "terms": {
             "meta": {
-                "title": "Terms of Use — LionGate Sarl",
+                "title": "Terms of Use | LionGate Sarl",
                 "description": "Terms of use for the LionGate Sarl website."
             },
             "title": "Terms of Use",

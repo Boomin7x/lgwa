@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react"
 import { X } from "lucide-react"
+import { useTranslations } from "next-intl"
 import {
     createContext,
     useContext,
@@ -54,15 +55,21 @@ function Sheet({ open, onOpenChange, children }: SheetProps) {
 type SheetTriggerProps = {
     children: ReactNode
     className?: string
+    "aria-label"?: string
 }
 
-function SheetTrigger({ children, className }: SheetTriggerProps) {
+function SheetTrigger({
+    children,
+    className,
+    "aria-label": ariaLabel,
+}: SheetTriggerProps) {
     const ctx = useContext(SheetContext)
     if (!ctx) throw new Error("SheetTrigger must be inside Sheet")
 
     return (
         <button
             type="button"
+            aria-label={ariaLabel}
             onClick={() => ctx.onOpenChange(true)}
             className={className}
         >
@@ -83,6 +90,7 @@ function SheetContent({
     side = "right",
 }: SheetContentProps) {
     const ctx = useContext(SheetContext)
+    const t = useTranslations("common")
     const prefersReduced = useReducedMotion()
     if (!ctx) throw new Error("SheetContent must be inside Sheet")
 
@@ -117,6 +125,7 @@ function SheetContent({
                     >
                         <button
                             type="button"
+                            aria-label={t("close")}
                             onClick={() => ctx.onOpenChange(false)}
                             className="text-muted hover:text-foreground focus-visible:ring-accent absolute top-4 right-4 transition-colors focus-visible:ring-2 focus-visible:outline-none"
                         >
