@@ -29,7 +29,7 @@ export function Navbar() {
     return (
         <header
             className={cn(
-                "ease-editorial fixed top-0 right-0 left-0 z-40 transition-colors duration-300",
+                "ease-editorial fixed top-0 right-0 left-0 z-60 transition-colors duration-300",
                 scrolled
                     ? "border-border bg-background/90 border-b backdrop-blur-xl"
                     : "border-b border-transparent bg-transparent"

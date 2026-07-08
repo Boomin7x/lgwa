@@ -81,6 +81,7 @@
 
     --animate-fade-in: fade-in 0.5s var(--ease-editorial);
     --animate-slide-up: slide-up 0.5s var(--ease-editorial);
+    --animate-marquee: marquee 38s linear infinite;
 
     @keyframes fade-in {
         from {
@@ -99,6 +100,15 @@
         to {
             opacity: 1;
             transform: translateY(0);
+        }
+    }
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
         }
     }
 }
@@ -135,6 +145,16 @@
     filter: saturate(0.82) contrast(1.06) sepia(0.14);
 }
 
+@utility edge-fade {
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 6%,
+        black 94%,
+        transparent
+    );
+}
+
 @layer base {
     body {
         background-color: var(--color-ink);
@@ -154,6 +174,10 @@
             animation-duration: 0.01ms !important;
             animation-iteration-count: 1 !important;
             transition-duration: 0.01ms !important;
+        }
+
+        .animate-marquee {
+            animation: none !important;
         }
     }
 }
