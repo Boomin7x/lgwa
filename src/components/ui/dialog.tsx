@@ -10,7 +10,9 @@ import {
     useEffect,
     type ReactNode,
 } from "react"
+import { createPortal } from "react-dom"
 import { cn } from "@/lib/utils"
+import { useMounted } from "@/components/ui/use-mounted"
 import { useReducedMotion } from "@/components/motion/use-reduced-motion"
 
 type DialogContextValue = {
@@ -81,9 +83,11 @@ function DialogContent({ children, className }: DialogContentProps) {
     const ctx = useContext(DialogContext)
     const prefersReduced = useReducedMotion()
     const t = useTranslations("common")
+    const mounted = useMounted()
     if (!ctx) throw new Error("DialogContent must be inside Dialog")
+    if (!mounted) return null
 
-    return (
+    return createPortal(
         <AnimatePresence>
             {ctx.open && (
                 <div className="fixed inset-0 z-60 flex items-center justify-center">
@@ -96,6 +100,8 @@ function DialogContent({ children, className }: DialogContentProps) {
                         onClick={() => ctx.onOpenChange(false)}
                     />
                     <motion.div
+                        role="dialog"
+                        aria-modal="true"
                         className={cn(
                             "border-border bg-background relative z-50 w-full max-w-lg rounded-sm border p-6 shadow-xl",
                             className
@@ -119,7 +125,8 @@ function DialogContent({ children, className }: DialogContentProps) {
                     </motion.div>
                 </div>
             )}
-        </AnimatePresence>
+        </AnimatePresence>,
+        document.body
     )
 }
 

@@ -5,9 +5,8 @@ test("mobile nav sheet opens and closes with Escape", async ({ page }) => {
     await page.goto("/fr")
     await page.getByRole("button", { name: "Menu" }).click()
     const drawerLink = page
-        .locator("header")
+        .getByRole("dialog")
         .getByRole("link", { name: "Accueil" })
-        .last()
     await expect(drawerLink).toBeVisible()
     await page.keyboard.press("Escape")
     await expect(drawerLink).not.toBeVisible()

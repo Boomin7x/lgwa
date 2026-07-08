@@ -11,7 +11,9 @@ import {
     useRef,
     type ReactNode,
 } from "react"
+import { createPortal } from "react-dom"
 import { cn } from "@/lib/utils"
+import { useMounted } from "@/components/ui/use-mounted"
 import { useReducedMotion } from "@/components/motion/use-reduced-motion"
 
 type SheetContextValue = {
@@ -94,6 +96,7 @@ function SheetContent({
     const t = useTranslations("common")
     const prefersReduced = useReducedMotion()
     const panelRef = useRef<HTMLDivElement>(null)
+    const mounted = useMounted()
     const open = ctx?.open ?? false
 
     useEffect(() => {
@@ -103,10 +106,11 @@ function SheetContent({
     }, [open])
 
     if (!ctx) throw new Error("SheetContent must be inside Sheet")
+    if (!mounted) return null
 
     const isRight = side === "right"
 
-    return (
+    return createPortal(
         <AnimatePresence>
             {ctx.open && (
                 <div className="fixed inset-0 z-60 flex">
@@ -121,6 +125,8 @@ function SheetContent({
                     <motion.div
                         ref={panelRef}
                         tabIndex={-1}
+                        role="dialog"
+                        aria-modal="true"
                         className={cn(
                             "bg-ink-raised border-border fixed top-0 flex h-full w-[78%] max-w-sm flex-col p-6 shadow-xl outline-none",
                             isRight ? "right-0 border-l" : "left-0 border-r",
@@ -150,7 +156,8 @@ function SheetContent({
                     </motion.div>
                 </div>
             )}
-        </AnimatePresence>
+        </AnimatePresence>,
+        document.body
     )
 }
 
