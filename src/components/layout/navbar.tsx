@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 import { useScroll, useMotionValueEvent } from "motion/react"
 import { usePathname } from "@/i18n/navigation"
@@ -38,10 +39,19 @@ export function Navbar() {
             >
                 <Link
                     href="/"
-                    className="font-heading text-foreground text-2xl uppercase"
+                    className="font-heading text-foreground flex items-center gap-3 text-2xl uppercase"
                 >
+                    <Image
+                        src="/brand/emblem.png"
+                        alt=""
+                        aria-hidden
+                        width={40}
+                        height={40}
+                        priority
+                        className="mix-blend-screen"
+                    />
                     LionGate
-                    <span aria-hidden className="text-accent">
+                    <span aria-hidden className="text-accent -ml-3">
                         .
                     </span>
                 </Link>
