@@ -48,7 +48,6 @@ export function Navbar() {
                         width={40}
                         height={40}
                         priority
-                        className="mix-blend-screen"
                     />
                     LionGate
                     <span aria-hidden className="text-accent -ml-3">
