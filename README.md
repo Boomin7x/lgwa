@@ -274,8 +274,6 @@ Pending assets from the company — everything is wired so swapping them is a fi
   Replace with real LionGate/Douala photography (~2000px wide) and update the paths in
   `src/lib/content/*` and the section components. The cosmetics imagery currently shows
   third-party branded products and must be replaced before launch.
-- **Logo**: the official blason (black-background version + shield-and-"L" icon for the
-  favicon) goes in `public/brand/` once provided.
 - **Contact details**: the phone number in `src/config/site.ts` is a placeholder.
 - **Legal pages**: privacy/terms drafts need review by the company before launch.
 
