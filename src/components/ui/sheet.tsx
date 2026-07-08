@@ -8,6 +8,7 @@ import {
     useContext,
     useCallback,
     useEffect,
+    useRef,
     type ReactNode,
 } from "react"
 import { cn } from "@/lib/utils"
@@ -92,6 +93,15 @@ function SheetContent({
     const ctx = useContext(SheetContext)
     const t = useTranslations("common")
     const prefersReduced = useReducedMotion()
+    const panelRef = useRef<HTMLDivElement>(null)
+    const open = ctx?.open ?? false
+
+    useEffect(() => {
+        if (open) {
+            panelRef.current?.focus()
+        }
+    }, [open])
+
     if (!ctx) throw new Error("SheetContent must be inside Sheet")
 
     const isRight = side === "right"
@@ -99,9 +109,9 @@ function SheetContent({
     return (
         <AnimatePresence>
             {ctx.open && (
-                <div className="fixed inset-0 z-50 flex">
+                <div className="fixed inset-0 z-60 flex">
                     <motion.div
-                        className="fixed inset-0 bg-black/60"
+                        className="bg-ink/70 fixed inset-0 backdrop-blur-sm"
                         initial={prefersReduced ? false : { opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -109,8 +119,10 @@ function SheetContent({
                         onClick={() => ctx.onOpenChange(false)}
                     />
                     <motion.div
+                        ref={panelRef}
+                        tabIndex={-1}
                         className={cn(
-                            "bg-background border-border fixed top-0 z-50 h-full w-72 p-6 shadow-xl",
+                            "bg-ink-raised border-border fixed top-0 flex h-full w-[78%] max-w-sm flex-col p-6 shadow-xl outline-none",
                             isRight ? "right-0 border-l" : "left-0 border-r",
                             className
                         )}
@@ -121,15 +133,18 @@ function SheetContent({
                         }
                         animate={{ x: 0 }}
                         exit={{ x: isRight ? "100%" : "-100%" }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        transition={{
+                            duration: 0.3,
+                            ease: [0.16, 1, 0.3, 1],
+                        }}
                     >
                         <button
                             type="button"
                             aria-label={t("close")}
                             onClick={() => ctx.onOpenChange(false)}
-                            className="text-muted hover:text-foreground focus-visible:ring-accent absolute top-4 right-4 transition-colors focus-visible:ring-2 focus-visible:outline-none"
+                            className="border-border text-foreground hover:border-foreground/50 focus-visible:ring-accent absolute top-6 right-6 flex size-10 items-center justify-center border transition-colors focus-visible:ring-2 focus-visible:outline-none"
                         >
-                            <X className="h-4 w-4" />
+                            <X className="h-5 w-5" />
                         </button>
                         {children}
                     </motion.div>

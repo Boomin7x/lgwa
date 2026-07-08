@@ -86,7 +86,7 @@ function DialogContent({ children, className }: DialogContentProps) {
     return (
         <AnimatePresence>
             {ctx.open && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center">
+                <div className="fixed inset-0 z-60 flex items-center justify-center">
                     <motion.div
                         className="fixed inset-0 bg-black/60"
                         initial={prefersReduced ? false : { opacity: 0 }}
