@@ -13,7 +13,7 @@ import { getVacancies } from "@/lib/content/vacancies"
 
 export function CareersVacancies() {
     const t = useTranslations("careers.vacancies")
-    const locale = useLocale() as "fr" | "en"
+    const locale = useLocale()
     const vacancies = getVacancies()
 
     return (

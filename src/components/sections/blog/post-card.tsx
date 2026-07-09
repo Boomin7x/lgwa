@@ -1,10 +1,11 @@
 import Image from "next/image"
+import type { Locale } from "next-intl"
 import { Link } from "@/i18n/navigation"
 import type { BlogPost } from "@/types/content"
 
 type PostCardProps = {
     post: BlogPost
-    locale: "fr" | "en"
+    locale: Locale
 }
 
 export function PostCard({ post, locale }: PostCardProps) {

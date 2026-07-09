@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { useTranslations } from "next-intl"
+import type { Locale } from "next-intl"
 import { Section } from "@/components/layout/section"
 import { LinkButton } from "@/components/layout/link-button"
 import { ScrollProgress } from "@/components/motion/scroll-progress"
@@ -8,7 +9,7 @@ import type { BlogPost } from "@/types/content"
 
 type PostBodyProps = {
     post: BlogPost
-    locale: "fr" | "en"
+    locale: Locale
 }
 
 export function PostBody({ post, locale }: PostBodyProps) {
