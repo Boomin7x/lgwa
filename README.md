@@ -89,6 +89,7 @@ Git hooks (installed automatically via `pnpm install`): **pre-commit** runs lint
 | i18n            | **next-intl**                                 | `/fr` (default) + `/en` routing via `src/proxy.ts`                  |
 | Forms           | **react-hook-form + zod**                     | One schema shared between client validation and the server action   |
 | Env validation  | **@t3-oss/env-nextjs**                        | Malformed env vars fail the build; absent ones switch to mock mode  |
+| Media           | **Cloudinary** (custom `next/image` loader)   | Global CDN delivery, `f_auto` format negotiation, per-image quality |
 | Backend (Ph. 3) | **Odoo 18 EE** (headless)                     | CRM leads, blog content, `mailing.contact` newsletter               |
 | Quality         | ESLint 9 + Prettier + Trunk + husky           | Meta-linting, security scanners, hook-enforced standards            |
 | Tests           | **Vitest** + Testing Library + **Playwright** | Unit + component + e2e against the production build                 |
@@ -133,7 +134,6 @@ Three rules make this safe:
 ```text
 web-app/
 ├── messages/                  # ALL site copy — fr.json + en.json (key parity is unit-tested)
-├── public/images/             # Local imagery (placeholder photography, see below)
 ├── e2e/                       # Playwright: smoke, forms, keyboard a11y
 └── src/
     ├── proxy.ts               # next-intl locale routing (Next 16: replaces middleware.ts)
@@ -151,7 +151,7 @@ web-app/
     │   ├── content/           # Mock data + read-time estimation (Odoo replaces in Phase 3)
     │   ├── odoo/              # Server-only Odoo client (Phase 3)
     │   └── env.ts             # t3-env schema — build fails on malformed vars
-    ├── config/                # site.ts (identity), nav.ts (single nav model)
+    ├── config/                # site.ts (identity), nav.ts (nav model), images.ts (Cloudinary registry)
     ├── i18n/                  # next-intl routing + request config
     └── types/                 # Content models, lead payloads, message-key typing
 ```
@@ -227,15 +227,17 @@ All gates must be green before merge. `main` is protected — PRs only.
 
 Set in `.env.local` (never committed). All are optional — absence enables mock mode.
 
-| Variable                     | Purpose                                                                                  |
-| ---------------------------- | ---------------------------------------------------------------------------------------- |
-| `ODOO_URL`                   | Odoo 18 instance URL (must be a valid URL)                                               |
-| `ODOO_DB`                    | Odoo database name                                                                       |
-| `ODOO_USERNAME`              | Technical user (least privilege: `crm.lead`, `blog.post`, `blog.tag`, `mailing.contact`) |
-| `ODOO_PASSWORD`              | Technical user API key                                                                   |
-| `ODOO_CRM_TEAM_IT_ID`        | Sales team id for IT-pole leads                                                          |
-| `ODOO_CRM_TEAM_COSMETICS_ID` | Sales team id for Cosmetics-pole leads                                                   |
-| `REVALIDATE_SECRET`          | Shared secret for the blog revalidation webhook                                          |
+| Variable                                       | Purpose                                                                                  |
+| ---------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ODOO_URL`                                     | Odoo 18 instance URL (must be a valid URL)                                               |
+| `ODOO_DB`                                      | Odoo database name                                                                       |
+| `ODOO_USERNAME`                                | Technical user (least privilege: `crm.lead`, `blog.post`, `blog.tag`, `mailing.contact`) |
+| `ODOO_PASSWORD`                                | Technical user API key                                                                   |
+| `ODOO_CRM_TEAM_IT_ID`                          | Sales team id for IT-pole leads                                                          |
+| `ODOO_CRM_TEAM_COSMETICS_ID`                   | Sales team id for Cosmetics-pole leads                                                   |
+| `REVALIDATE_SECRET`                            | Shared secret for the blog revalidation webhook                                          |
+| `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME`            | Cloudinary cloud name (public, **required** — image URLs are built from it)              |
+| `CLOUDINARY_API_KEY` / `CLOUDINARY_API_SECRET` | Server-only, used for uploading media via API                                            |
 
 Validation happens at build time via `src/lib/env.ts` — a malformed value fails the build
 loudly; a missing one is fine (mock mode).
@@ -270,9 +272,9 @@ These are obligatory in every part of development:
 
 Pending assets from the company — everything is wired so swapping them is a file drop:
 
-- **Photography**: all images in `public/images/` are warm-graded stock placeholders.
-  Replace with real LionGate/Douala photography (~2000px wide) and update the paths in
-  `src/lib/content/*` and the section components. The cosmetics imagery currently shows
+- **Photography**: all photos are stock placeholders hosted on Cloudinary. Every image the
+  site uses is registered by name in `src/config/images.ts` — to swap one, upload the real
+  photo to Cloudinary and change that one public ID. The cosmetics imagery currently shows
   third-party branded products and must be replaced before launch.
 - **Contact details**: the phone number in `src/config/site.ts` is a placeholder.
 - **Legal pages**: privacy/terms drafts need review by the company before launch.

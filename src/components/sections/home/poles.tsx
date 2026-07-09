@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { cloudinaryImages } from "@/config/images"
 import { useTranslations } from "next-intl"
 import { Section } from "@/components/layout/section"
 import { SectionHeading } from "@/components/layout/section-heading"
@@ -7,8 +8,8 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { LinkButton } from "@/components/layout/link-button"
 
 const poleImages = {
-    it: "/images/photo-1522071820081-009f0129c71c.avif",
-    cosmetics: "/images/photo-1522335789203-aabd1fc54bc9.avif",
+    it: cloudinaryImages.engineeringTeam,
+    cosmetics: cloudinaryImages.cosmeticsFlatLay,
 }
 
 export function HomePoles() {

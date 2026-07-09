@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { cloudinaryImages } from "@/config/images"
 import { useTranslations } from "next-intl"
 import { Section } from "@/components/layout/section"
 import { SectionHeading } from "@/components/layout/section-heading"
@@ -8,19 +9,19 @@ import { FadeIn } from "@/components/motion/fade-in"
 const services = [
     {
         key: "devops",
-        image: "/images/photo-1558494949-ef010cbdcc31.avif",
+        image: cloudinaryImages.serverRacks,
     },
     {
         key: "odoo",
-        image: "/images/photo-1551288049-bebda4e38f71.avif",
+        image: cloudinaryImages.analyticsDashboard,
     },
     {
         key: "ai",
-        image: "/images/photo-1620712943543-bcc4688e7485.avif",
+        image: cloudinaryImages.aiTechnology,
     },
     {
         key: "fullstack",
-        image: "/images/photo-1498050108023-c5249f4df085.avif",
+        image: cloudinaryImages.laptopCode,
     },
 ] as const
 

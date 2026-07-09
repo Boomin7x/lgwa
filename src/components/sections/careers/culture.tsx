@@ -1,9 +1,10 @@
 import Image from "next/image"
+import { cloudinaryImages } from "@/config/images"
 import { useTranslations } from "next-intl"
 import { Section } from "@/components/layout/section"
 import { Reveal } from "@/components/motion/reveal"
 
-const cultureImage = "/images/photo-1522202176988-66273c2fd55f.avif"
+const cultureImage = cloudinaryImages.officeCollaboration
 
 export function CareersCulture() {
     const t = useTranslations("careers.culture")

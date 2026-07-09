@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { cloudinaryImages } from "@/config/images"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -42,7 +43,7 @@ const inkSwatches = [
     { name: "Paper raised", className: "bg-paper-raised text-ink" },
 ]
 
-const demoImage = "/images/photo-1494412574643-ff11b0a5c1c3.avif"
+const demoImage = cloudinaryImages.portOfDouala
 
 const listRows = [
     { no: "01", title: "Editorial list row", detail: "Hairline dividers" },

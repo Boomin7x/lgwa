@@ -41,6 +41,7 @@ export default async function RootLayout({
             className={`${displayFont.variable} ${headingFont.variable} ${sansFont.variable} ${monoFont.variable} h-full antialiased`}
         >
             <body className="bg-background text-body-text flex min-h-full flex-col">
+                <link rel="preconnect" href="https://res.cloudinary.com" />
                 <NextIntlClientProvider>
                     <Toaster>
                         <Navbar />

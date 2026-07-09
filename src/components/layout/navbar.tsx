@@ -46,6 +46,7 @@ export function Navbar() {
                     <Image
                         src="/brand/emblem.webp"
                         alt=""
+                        unoptimized
                         aria-hidden
                         quality={55}
                         width={40}
@@ -105,6 +106,7 @@ export function Navbar() {
                                         <Image
                                             src="/brand/emblem.webp"
                                             alt=""
+                                            unoptimized
                                             width={32}
                                             height={32}
                                             className="h-8 w-8"

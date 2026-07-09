@@ -1,10 +1,11 @@
 import Image from "next/image"
+import { cloudinaryImages } from "@/config/images"
 import { useTranslations } from "next-intl"
 import { Section } from "@/components/layout/section"
 import { SectionHeading } from "@/components/layout/section-heading"
 import { Parallax } from "@/components/motion/parallax"
 
-const heroImage = "/images/photo-1571781926291-c477ebfd024b.avif"
+const heroImage = cloudinaryImages.cosmeticsProducts
 
 export function CosmeticsHero() {
     const t = useTranslations("cosmetics.hero")

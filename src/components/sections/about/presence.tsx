@@ -1,11 +1,12 @@
 import Image from "next/image"
+import { cloudinaryImages } from "@/config/images"
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/navigation"
 import { Section } from "@/components/layout/section"
 import { Button } from "@/components/ui/button"
 import { Reveal } from "@/components/motion/reveal"
 
-const presenceImage = "/images/photo-1578575437130-527eed3abbec.avif"
+const presenceImage = cloudinaryImages.cargoShip
 
 export function AboutPresence() {
     const t = useTranslations("about.presence")

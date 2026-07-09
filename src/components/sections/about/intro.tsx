@@ -1,10 +1,11 @@
 import Image from "next/image"
+import { cloudinaryImages } from "@/config/images"
 import { useTranslations } from "next-intl"
 import { Section } from "@/components/layout/section"
 import { SectionHeading } from "@/components/layout/section-heading"
 import { Parallax } from "@/components/motion/parallax"
 
-const introImage = "/images/photo-1477959858617-67f85cf4f1df.avif"
+const introImage = cloudinaryImages.doualaSkyline
 
 export function AboutIntro() {
     const t = useTranslations("about.intro")

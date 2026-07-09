@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { cloudinaryImages } from "@/config/images"
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/navigation"
 import { Button } from "@/components/ui/button"
@@ -6,7 +7,7 @@ import { MicroLabel } from "@/components/layout/micro-label"
 import { Parallax } from "@/components/motion/parallax"
 import { ScrollFade } from "@/components/motion/scroll-fade"
 
-const heroImage = "/images/photo-1494412574643-ff11b0a5c1c3.avif"
+const heroImage = cloudinaryImages.portOfDouala
 
 export function HomeHero() {
     const t = useTranslations("home.hero")

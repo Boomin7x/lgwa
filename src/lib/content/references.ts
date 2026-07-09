@@ -1,4 +1,5 @@
 import type { ProjectReference } from "@/types/content"
+import { cloudinaryImages } from "@/config/images"
 
 const mockReferences: ProjectReference[] = [
     {
@@ -13,7 +14,7 @@ const mockReferences: ProjectReference[] = [
             fr: "+40% d'efficacité opérationnelle, 15 000 commandes traitées par mois.",
             en: "+40% operational efficiency, 15,000 orders processed per month.",
         },
-        image: "/images/photo-1563013544-824ae1b704d3.avif",
+        image: cloudinaryImages.ecommercePlatform,
         imageAlt: {
             fr: "Paiement d'une commande en ligne sur un ordinateur portable",
             en: "Online order checkout on a laptop",
@@ -34,7 +35,7 @@ const mockReferences: ProjectReference[] = [
             fr: "Réduction de 60% des délais de traitement, économie de 200M FCFA/an.",
             en: "60% reduction in processing times, savings of 200M FCFA/year.",
         },
-        image: "/images/photo-1578575437130-527eed3abbec.avif",
+        image: cloudinaryImages.cargoShip,
         imageAlt: {
             fr: "Navire porte-conteneurs à quai",
             en: "Container ship docked at the port",
@@ -55,7 +56,7 @@ const mockReferences: ProjectReference[] = [
             fr: "Gestion de 50 000+ clients, conformité COBAC atteinte en 3 mois.",
             en: "Management of 50,000+ clients, COBAC compliance achieved in 3 months.",
         },
-        image: "/images/photo-1554224155-6726b3ff858f.avif",
+        image: cloudinaryImages.financeDesk,
         imageAlt: {
             fr: "Documents financiers et calculatrice sur un bureau",
             en: "Financial documents and calculator on a desk",
@@ -76,7 +77,7 @@ const mockReferences: ProjectReference[] = [
             fr: "30% de réduction du temps d'attente, 100 000 dossiers numérisés.",
             en: "30% reduction in waiting times, 100,000 digitized records.",
         },
-        image: "/images/photo-1576091160399-112ba8d25d1d.avif",
+        image: cloudinaryImages.healthcareTech,
         imageAlt: {
             fr: "Professionnelle de santé utilisant un ordinateur",
             en: "Healthcare professional using a computer",
@@ -97,7 +98,7 @@ const mockReferences: ProjectReference[] = [
             fr: "Déploiements 3x plus rapides, 99.9% de disponibilité.",
             en: "3x faster deployments, 99.9% uptime.",
         },
-        image: "/images/photo-1451187580459-43490279c0fa.avif",
+        image: cloudinaryImages.satelliteEarth,
         imageAlt: {
             fr: "Visualisation d'un réseau mondial de télécommunications",
             en: "Global telecommunications network visualization",
@@ -118,7 +119,7 @@ const mockReferences: ProjectReference[] = [
             fr: "20 000 apprenants actifs, taux de complétion des cours à 85%.",
             en: "20,000 active learners, 85% course completion rate.",
         },
-        image: "/images/photo-1523240795612-9a054b0db644.avif",
+        image: cloudinaryImages.universityCampus,
         imageAlt: {
             fr: "Étudiants apprenant sur des ordinateurs portables en classe",
             en: "Students learning on laptops in a classroom",
