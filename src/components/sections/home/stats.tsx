@@ -16,15 +16,17 @@ export function HomeStats() {
         <Section variant="light" className="pt-0 md:pt-0">
             <dl className="border-border grid grid-cols-2 gap-x-8 gap-y-14 border-t pt-14 md:grid-cols-4">
                 {stats.map((stat, i) => (
-                    <Reveal key={stat.key} delay={i * 0.08}>
-                        <div className="flex flex-col">
-                            <dt className="text-micro text-muted order-2 mt-3 font-mono uppercase">
-                                {t(stat.key)}
-                            </dt>
-                            <dd className="font-heading text-display text-foreground order-1">
-                                {stat.value}
-                            </dd>
-                        </div>
+                    <Reveal
+                        key={stat.key}
+                        delay={i * 0.08}
+                        className="flex flex-col"
+                    >
+                        <dt className="text-micro text-muted order-2 mt-3 font-mono uppercase">
+                            {t(stat.key)}
+                        </dt>
+                        <dd className="font-heading text-display text-foreground order-1">
+                            {stat.value}
+                        </dd>
                     </Reveal>
                 ))}
             </dl>

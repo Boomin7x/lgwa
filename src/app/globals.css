@@ -111,6 +111,15 @@
             transform: translateX(-50%);
         }
     }
+
+    @keyframes rise {
+        from {
+            transform: translateY(24px);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
 }
 
 @utility surface-dark {
@@ -143,6 +152,20 @@
 
 @utility img-warm {
     filter: saturate(0.82) contrast(1.06) sepia(0.14);
+}
+
+@utility hero-entrance {
+    animation: slide-up 0.7s var(--ease-editorial) both;
+}
+
+@utility hero-entrance-rise {
+    animation: rise 0.7s var(--ease-editorial) both;
+}
+
+@utility wordmark-text {
+    &::before {
+        content: "LionGate";
+    }
 }
 
 @utility edge-fade {

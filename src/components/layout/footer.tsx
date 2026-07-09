@@ -85,12 +85,10 @@ export function Footer() {
                     </div>
                 </div>
 
-                <p
+                <div
                     aria-hidden
-                    className="font-display text-wordmark text-foreground/6 pointer-events-none mt-24 -mb-6 text-center whitespace-nowrap uppercase select-none"
-                >
-                    LionGate
-                </p>
+                    className="wordmark-text font-display text-wordmark text-foreground/6 pointer-events-none mt-24 -mb-6 text-center whitespace-nowrap uppercase select-none"
+                />
 
                 <div className="border-border text-muted flex flex-col items-center justify-between gap-3 border-t pt-8 text-xs md:flex-row">
                     <p>

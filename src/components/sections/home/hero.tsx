@@ -3,8 +3,6 @@ import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import { MicroLabel } from "@/components/layout/micro-label"
-import { StaggerText } from "@/components/motion/stagger-text"
-import { Reveal } from "@/components/motion/reveal"
 import { Parallax } from "@/components/motion/parallax"
 import { ScrollFade } from "@/components/motion/scroll-fade"
 
@@ -23,6 +21,7 @@ export function HomeHero() {
                         alt={t("imageAlt")}
                         fill
                         priority
+                        quality={60}
                         sizes="100vw"
                         className="img-warm scale-110 object-cover"
                     />
@@ -39,35 +38,27 @@ export function HomeHero() {
             </div>
             <div className="relative mx-auto w-full max-w-[1440px] px-5 pt-24 pb-20 sm:px-8 md:pb-28">
                 <ScrollFade>
-                    <Reveal>
+                    <div className="hero-entrance">
                         <MicroLabel slashes={1} className="mb-8">
                             {tCommon("tagline")}
                         </MicroLabel>
-                    </Reveal>
-                    <StaggerText
-                        as="h1"
-                        delay={0.1}
-                        className="font-display text-hero text-foreground max-w-5xl uppercase"
-                    >
+                    </div>
+                    <h1 className="hero-entrance-rise font-display text-hero text-foreground max-w-5xl uppercase">
                         {t("headline")}
-                    </StaggerText>
-                    <Reveal delay={0.35}>
+                    </h1>
+                    <div className="hero-entrance [animation-delay:200ms]">
                         <p className="text-body text-body-text mt-8 max-w-xl text-pretty">
                             {t("subheadline")}
                         </p>
-                    </Reveal>
-                    <Reveal delay={0.5}>
-                        <div className="mt-10 flex flex-wrap gap-4">
-                            <Button size="lg" asChild>
-                                <Link href="/it">{t("ctaIt")}</Link>
-                            </Button>
-                            <Button variant="secondary" size="lg" asChild>
-                                <Link href="/cosmetics">
-                                    {t("ctaCosmetics")}
-                                </Link>
-                            </Button>
-                        </div>
-                    </Reveal>
+                    </div>
+                    <div className="hero-entrance mt-10 flex flex-wrap gap-4 [animation-delay:320ms]">
+                        <Button size="lg" asChild>
+                            <Link href="/it">{t("ctaIt")}</Link>
+                        </Button>
+                        <Button variant="secondary" size="lg" asChild>
+                            <Link href="/cosmetics">{t("ctaCosmetics")}</Link>
+                        </Button>
+                    </div>
                 </ScrollFade>
             </div>
         </section>

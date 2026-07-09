@@ -58,10 +58,10 @@
             "label": "Nos pôles d'expertise",
             "itTitle": "IT & Software Outsourcing",
             "itDescription": "DevOps, ERP Odoo, Intelligence Artificielle, développement full-stack (Symfony, Nuxt, FastAPI). Nous concevons et déployons des solutions logicielles sur mesure.",
-            "itCta": "En savoir plus",
+            "itCta": "Découvrir le pôle IT",
             "cosmeticsTitle": "Distribution Cosmétiques",
             "cosmeticsDescription": "Distribution de produits cosmétiques premium en partenariat avec des fabricants allemands. Qualité européenne pour le marché africain.",
-            "cosmeticsCta": "Découvrir",
+            "cosmeticsCta": "Découvrir le pôle cosmétiques",
             "itImageAlt": "Ingénieurs logiciels collaborant autour d'un ordinateur portable",
             "cosmeticsImageAlt": "Flacons de soins premium disposés dans une lumière naturelle chaude"
         },
