@@ -33,7 +33,8 @@
         "localeSwitcher": {
             "label": "Langue",
             "fr": "Français",
-            "en": "English"
+            "en": "English",
+            "de": "Deutsch"
         },
         "form": {
             "required": "Ce champ est requis",

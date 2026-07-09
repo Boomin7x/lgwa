@@ -3,9 +3,8 @@
 import { useTranslations, useLocale } from "next-intl"
 import type { Locale } from "next-intl"
 import { usePathname, useRouter } from "@/i18n/navigation"
+import { routing } from "@/i18n/routing"
 import { Globe } from "lucide-react"
-
-const locales = ["fr", "en"] as const
 
 export function LocaleSwitcher() {
     const t = useTranslations("common.localeSwitcher")
@@ -20,7 +19,7 @@ export function LocaleSwitcher() {
     return (
         <div className="flex items-center gap-1">
             <Globe className="text-muted h-4 w-4" />
-            {locales.map((l) => (
+            {routing.locales.map((l) => (
                 <button
                     key={l}
                     type="button"

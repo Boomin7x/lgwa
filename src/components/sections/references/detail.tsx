@@ -18,7 +18,7 @@ type ReferenceDetailProps = {
 
 export function ReferenceDetail({ reference }: ReferenceDetailProps) {
     const t = useTranslations("references.detail")
-    const locale = useLocale() as "fr" | "en"
+    const locale = useLocale()
     const [open, setOpen] = useState(false)
 
     return (

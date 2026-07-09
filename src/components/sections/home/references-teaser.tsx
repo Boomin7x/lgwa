@@ -9,7 +9,7 @@ import { getReferences } from "@/lib/content/references"
 
 export function HomeReferencesTeaser() {
     const t = useTranslations("home.references")
-    const locale = useLocale() as "fr" | "en"
+    const locale = useLocale()
     const refs = getReferences().slice(0, 3)
 
     return (
