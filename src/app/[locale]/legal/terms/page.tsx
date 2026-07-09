@@ -2,7 +2,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server"
 import type { Metadata } from "next"
 import type { Locale } from "next-intl"
 import { Section } from "@/components/layout/section"
-import { Reveal } from "@/components/motion/reveal"
 
 type PageProps = {
     params: Promise<{ locale: Locale }>
@@ -26,14 +25,14 @@ export default async function TermsPage({ params }: PageProps) {
 
     return (
         <Section className="pt-36 md:pt-44">
-            <Reveal>
+            <div className="hero-entrance-rise">
                 <h1 className="font-heading text-h1 text-foreground uppercase">
                     {t("title")}
                 </h1>
                 <div className="text-body text-body-text mt-8 max-w-2xl leading-relaxed whitespace-pre-line">
                     {t("content")}
                 </div>
-            </Reveal>
+            </div>
         </Section>
     )
 }

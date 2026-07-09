@@ -18,7 +18,7 @@ const mockPosts: MockPost[] = [
             fr: "<p>Dans un contexte où la digitalisation du commerce en Afrique centrale s'accélère, la plateforme PALIGO se positionne comme un acteur clé de cette transformation. Développée intégralement par les équipes de LionGate Sarl, cette solution répond aux besoins spécifiques des entreprises de la région.</p><p>La plateforme offre une gestion complète des stocks, des commandes et des livraisons, le tout accessible via une interface intuitive en français et en anglais.</p>",
             en: "<p>As digital commerce accelerates in Central Africa, the PALIGO platform positions itself as a key player in this transformation. Developed entirely by LionGate Sarl's teams, this solution meets the specific needs of businesses in the region.</p><p>The platform offers complete management of inventory, orders, and deliveries, all accessible through an intuitive interface in French and English.</p>",
         },
-        coverImage: "/images/photo-1556742049-0cfed4f6a45d.jpg",
+        coverImage: "/images/photo-1556742049-0cfed4f6a45d.avif",
         coverImageAlt: {
             fr: "Paiement électronique lors d'une transaction e-commerce",
             en: "Electronic payment during an e-commerce transaction",
@@ -47,7 +47,7 @@ const mockPosts: MockPost[] = [
             fr: "<p>Les PME africaines font face à des défis uniques : ressources limitées, besoin d'agilité et accès restreint aux technologies de pointe. Odoo ERP apporte une réponse concrète à ces enjeux.</p><p>Modularité, coût maîtrisé, adaptabilité locale : Odoo coche toutes les cases pour les entreprises en croissance sur le continent.</p>",
             en: "<p>African SMEs face unique challenges: limited resources, need for agility, and restricted access to cutting-edge technologies. Odoo ERP provides a concrete answer to these challenges.</p><p>Modularity, controlled costs, local adaptability: Odoo checks all the boxes for growing businesses on the continent.</p>",
         },
-        coverImage: "/images/photo-1551288049-bebda4e38f71.jpg",
+        coverImage: "/images/photo-1551288049-bebda4e38f71.avif",
         coverImageAlt: {
             fr: "Tableau de bord analytique affiché sur un écran",
             en: "Analytics dashboard displayed on a screen",
@@ -76,7 +76,7 @@ const mockPosts: MockPost[] = [
             fr: "<p>Le DevOps n'est pas réservé aux grands groupes technologiques. En Afrique, de plus en plus d'entreprises adoptent ces pratiques pour accélérer leurs cycles de développement et améliorer la fiabilité de leurs services.</p><p>À travers nos missions au Cameroun et en Côte d'Ivoire, nous avons identifié les pratiques qui fonctionnent le mieux dans le contexte africain.</p>",
             en: "<p>DevOps is not reserved for large tech groups. In Africa, more and more companies are adopting these practices to accelerate their development cycles and improve service reliability.</p><p>Through our missions in Cameroon and Ivory Coast, we have identified the practices that work best in the African context.</p>",
         },
-        coverImage: "/images/photo-1558494949-ef010cbdcc31.jpg",
+        coverImage: "/images/photo-1558494949-ef010cbdcc31.avif",
         coverImageAlt: {
             fr: "Rangées de serveurs dans un centre de données",
             en: "Rows of servers in a data center",
@@ -104,7 +104,7 @@ const mockPosts: MockPost[] = [
             fr: "<p>Depuis sa création, le pôle Distribution Cosmétiques de LionGate Sarl s'appuie sur des partenariats solides avec des fabricants allemands reconnus pour leur qualité et leur innovation.</p><p>Cette nouvelle phase de notre collaboration permet d'élargir la gamme de produits disponibles au Cameroun et en Afrique centrale, avec des marques premium adaptées aux besoins du marché local.</p>",
             en: "<p>Since its creation, LionGate Sarl's Cosmetics Distribution division has relied on strong partnerships with German manufacturers known for their quality and innovation.</p><p>This new phase of our collaboration expands the range of products available in Cameroon and Central Africa, with premium brands adapted to local market needs.</p>",
         },
-        coverImage: "/images/photo-1596462502278-27bfdc403348.jpg",
+        coverImage: "/images/photo-1596462502278-27bfdc403348.avif",
         coverImageAlt: {
             fr: "Produits cosmétiques disposés sur un fond clair",
             en: "Cosmetic products arranged on a light background",
@@ -133,7 +133,7 @@ const mockPosts: MockPost[] = [
             fr: "<p>L'IA transforme tous les secteurs, et l'Afrique ne fait pas exception. Des solutions de santé aux outils agricoles, en passant par la fintech, les applications concrètes se multiplient.</p><p>Chez LionGate, nous développons des produits IA adaptés aux réalités du marché africain : modèles légers, fonctionnement hors-ligne, interfaces multilingues.</p>",
             en: "<p>AI is transforming all sectors, and Africa is no exception. From healthcare solutions to agricultural tools, to fintech, concrete applications are multiplying.</p><p>At LionGate, we develop AI products adapted to African market realities: lightweight models, offline functionality, multilingual interfaces.</p>",
         },
-        coverImage: "/images/photo-1620712943543-bcc4688e7485.jpg",
+        coverImage: "/images/photo-1620712943543-bcc4688e7485.avif",
         coverImageAlt: {
             fr: "Visualisation abstraite d'une intelligence artificielle",
             en: "Abstract visualization of artificial intelligence",

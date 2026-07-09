@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl"
 import { Section } from "@/components/layout/section"
 import { Reveal } from "@/components/motion/reveal"
 
-const activityImage = "/images/photo-1553413077-190dd305871c.jpg"
+const activityImage = "/images/photo-1553413077-190dd305871c.avif"
 
 export function CosmeticsActivity() {
     const t = useTranslations("cosmetics.activity")

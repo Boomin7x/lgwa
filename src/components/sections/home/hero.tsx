@@ -6,7 +6,7 @@ import { MicroLabel } from "@/components/layout/micro-label"
 import { Parallax } from "@/components/motion/parallax"
 import { ScrollFade } from "@/components/motion/scroll-fade"
 
-const heroImage = "/images/photo-1494412574643-ff11b0a5c1c3.jpg"
+const heroImage = "/images/photo-1494412574643-ff11b0a5c1c3.avif"
 
 export function HomeHero() {
     const t = useTranslations("home.hero")
@@ -21,7 +21,8 @@ export function HomeHero() {
                         alt={t("imageAlt")}
                         fill
                         priority
-                        quality={60}
+                        fetchPriority="high"
+                        quality={45}
                         sizes="100vw"
                         className="img-warm scale-110 object-cover"
                     />

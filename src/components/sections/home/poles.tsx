@@ -7,8 +7,8 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { LinkButton } from "@/components/layout/link-button"
 
 const poleImages = {
-    it: "/images/photo-1522071820081-009f0129c71c.jpg",
-    cosmetics: "/images/photo-1522335789203-aabd1fc54bc9.jpg",
+    it: "/images/photo-1522071820081-009f0129c71c.avif",
+    cosmetics: "/images/photo-1522335789203-aabd1fc54bc9.avif",
 }
 
 export function HomePoles() {
@@ -25,6 +25,7 @@ export function HomePoles() {
                                 src={poleImages.it}
                                 alt={t("itImageAlt")}
                                 fill
+                                quality={60}
                                 sizes="(max-width: 1024px) 100vw, 50vw"
                                 className="img-warm ease-editorial object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                             />
@@ -47,6 +48,7 @@ export function HomePoles() {
                                 src={poleImages.cosmetics}
                                 alt={t("cosmeticsImageAlt")}
                                 fill
+                                quality={60}
                                 sizes="(max-width: 1024px) 100vw, 50vw"
                                 className="img-warm ease-editorial object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                             />

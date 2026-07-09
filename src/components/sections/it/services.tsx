@@ -8,19 +8,19 @@ import { FadeIn } from "@/components/motion/fade-in"
 const services = [
     {
         key: "devops",
-        image: "/images/photo-1558494949-ef010cbdcc31.jpg",
+        image: "/images/photo-1558494949-ef010cbdcc31.avif",
     },
     {
         key: "odoo",
-        image: "/images/photo-1551288049-bebda4e38f71.jpg",
+        image: "/images/photo-1551288049-bebda4e38f71.avif",
     },
     {
         key: "ai",
-        image: "/images/photo-1620712943543-bcc4688e7485.jpg",
+        image: "/images/photo-1620712943543-bcc4688e7485.avif",
     },
     {
         key: "fullstack",
-        image: "/images/photo-1498050108023-c5249f4df085.jpg",
+        image: "/images/photo-1498050108023-c5249f4df085.avif",
     },
 ] as const
 

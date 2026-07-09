@@ -42,7 +42,7 @@ const inkSwatches = [
     { name: "Paper raised", className: "bg-paper-raised text-ink" },
 ]
 
-const demoImage = "/images/photo-1494412574643-ff11b0a5c1c3.jpg"
+const demoImage = "/images/photo-1494412574643-ff11b0a5c1c3.avif"
 
 const listRows = [
     { no: "01", title: "Editorial list row", detail: "Hairline dividers" },

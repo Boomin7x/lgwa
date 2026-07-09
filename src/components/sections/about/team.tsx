@@ -6,9 +6,9 @@ import { StaggerGroup } from "@/components/motion/stagger-group"
 import { FadeIn } from "@/components/motion/fade-in"
 
 const memberImages = [
-    "/images/photo-1507003211169-0a1dd7228f2d.jpg",
-    "/images/photo-1560250097-0b93528c311a.jpg",
-    "/images/photo-1573496359142-b8d87734a5a2.jpg",
+    "/images/photo-1507003211169-0a1dd7228f2d.avif",
+    "/images/photo-1560250097-0b93528c311a.avif",
+    "/images/photo-1573496359142-b8d87734a5a2.avif",
 ] as const
 
 export function AboutTeam() {

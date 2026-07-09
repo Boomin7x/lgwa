@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl"
 import { Section } from "@/components/layout/section"
 import { Reveal } from "@/components/motion/reveal"
 
-const cultureImage = "/images/photo-1522202176988-66273c2fd55f.jpg"
+const cultureImage = "/images/photo-1522202176988-66273c2fd55f.avif"
 
 export function CareersCulture() {
     const t = useTranslations("careers.culture")

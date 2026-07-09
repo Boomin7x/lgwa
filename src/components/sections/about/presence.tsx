@@ -5,7 +5,7 @@ import { Section } from "@/components/layout/section"
 import { Button } from "@/components/ui/button"
 import { Reveal } from "@/components/motion/reveal"
 
-const presenceImage = "/images/photo-1578575437130-527eed3abbec.jpg"
+const presenceImage = "/images/photo-1578575437130-527eed3abbec.avif"
 
 export function AboutPresence() {
     const t = useTranslations("about.presence")

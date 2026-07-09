@@ -45,6 +45,7 @@ export function PostBody({ post, locale }: PostBodyProps) {
                         alt={post.coverImageAlt[locale]}
                         fill
                         priority
+                        fetchPriority="high"
                         sizes="(max-width: 1024px) 100vw, 896px"
                         className="img-warm object-cover"
                     />

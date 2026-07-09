@@ -44,9 +44,10 @@ export function Navbar() {
                     className="font-heading text-foreground flex items-center gap-3 text-2xl uppercase"
                 >
                     <Image
-                        src="/brand/emblem.png"
+                        src="/brand/emblem.webp"
                         alt=""
                         aria-hidden
+                        quality={55}
                         width={40}
                         height={40}
                         priority
@@ -102,7 +103,7 @@ export function Navbar() {
                                 <div className="flex min-h-0 flex-1 flex-col pb-[env(safe-area-inset-bottom)]">
                                     <div className="flex h-10 items-center gap-3">
                                         <Image
-                                            src="/brand/emblem.png"
+                                            src="/brand/emblem.webp"
                                             alt=""
                                             width={32}
                                             height={32}
