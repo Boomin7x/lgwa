@@ -8,7 +8,7 @@ import { getPosts } from "@/lib/content/blog-mock"
 
 export function HomeBlogTeaser() {
     const t = useTranslations("home.blog")
-    const locale = useLocale() as "fr" | "en"
+    const locale = useLocale()
     const posts = getPosts().slice(0, 3)
 
     return (

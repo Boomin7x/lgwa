@@ -38,6 +38,8 @@ export default async function RootLayout({
     return (
         <html
             lang={locale}
+            dir="ltr"
+            suppressHydrationWarning
             className={`${displayFont.variable} ${headingFont.variable} ${sansFont.variable} ${monoFont.variable} h-full antialiased`}
         >
             <body className="bg-background text-body-text flex min-h-full flex-col">

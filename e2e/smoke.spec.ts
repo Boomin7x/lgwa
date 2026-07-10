@@ -20,6 +20,16 @@ test.describe("english-preferring browser", () => {
     })
 })
 
+test.describe("german-preferring browser", () => {
+    test.use({ locale: "de-DE" })
+
+    test("root redirects to the german locale", async ({ page }) => {
+        await page.goto("/")
+        await expect(page).toHaveURL(/\/de$/)
+        await expect(page.locator("html")).toHaveAttribute("lang", "de")
+    })
+})
+
 test("english home renders with english content", async ({ page }) => {
     await page.goto("/en")
     await expect(page.locator("html")).toHaveAttribute("lang", "en")
@@ -29,6 +39,12 @@ test("english home renders with english content", async ({ page }) => {
 test("french home renders a single h1", async ({ page }) => {
     await page.goto("/fr")
     await expect(page.locator("h1")).toHaveCount(1)
+})
+
+test("german home renders with german content", async ({ page }) => {
+    await page.goto("/de")
+    await expect(page.locator("html")).toHaveAttribute("lang", "de")
+    await expect(page.locator("h1")).toBeVisible()
 })
 
 test("unknown page under a valid locale returns 404", async ({ page }) => {

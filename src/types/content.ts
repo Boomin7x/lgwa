@@ -1,6 +1,7 @@
 export interface LocalizedField {
     fr: string
     en: string
+    de: string
 }
 
 export interface BlogPost {
